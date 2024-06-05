@@ -1,0 +1,84 @@
+<div >
+    <div class="f1">
+        <div class="f2">
+          <div class="f3">
+      <p >SIGN UP FOR THE <span>LATEST NEWS AND OFFERS!</span></p>
+         </div>
+         <div style="display: flex;">
+          
+           <input type="text" placeholder="Email" [(ngModel)]="userEmail" placeholder="Enter your email" >
+           <button (click)="sendEmail()">
+             <div class="svg-wrapper-1">
+               <div class="svg-wrapper">
+                 <svg
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 24 24"
+                   width="24"  
+                   height="24"
+                 >
+                   <path fill="none" d="M0 0h24v24H0z"></path>
+                   <path
+                     fill="currentColor"
+                     d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                   ></path>
+                 </svg>
+               </div>
+             </div>
+             
+           </button>
+           
+         </div>
+        </div>
+     </div>
+     <div class="f4">
+       <div class="f5" *ngFor="let salle of displayedSalle">
+          <div class="f6">
+             <img [src]="salle.image" alt="{{ salle.name }}" class="img1" >
+             <p class="p2">Peaker is a champ in providing its users with absolutely everything a fitness or gym site needs. Lorem ipsum dolor sit amet</p>
+          </div>
+          <div class="f6">
+            <p style="font-size: 19px;">QUICK LINKS</p>
+            <ul>
+             <li><a href="">Why Choose Us</a></li><br>
+             <li><a href="">Fitness Online</a></li><br>
+             <li><a href="">Our Classes</a></li><br>
+             <li><a href="">Download Brochure</a></li><br>
+             <li><a href="">News and events</a></li><br>
+             <li><a href="">Before & After</a></li><br>
+           </ul>
+          </div>
+          <div class="f6">
+             <p style="font-size: 19px;">CENTER ADDRESS</p>
+             <div style="display: flex;">
+                 <span class="material-symbols-outlined" style="    font-size: 23px;">phone_in_talk</span>
+               <p class="p3"> {{salle.numero}}</p>
+             </div>
+             <div style="display: flex;">
+                 <span class="material-symbols-outlined" style="    font-size: 23px;">  mail</span>
+               <p class="p3"> {{salle.email}}</p>
+             </div>
+             <div style="display: flex;">
+                 <span class="material-symbols-outlined" style="    font-size: 23px;">  location_on</span>
+               <p class="p3"> {{salle.locationexact}}</p>
+             </div>
+          </div>
+          <div class="f6">
+             <p style="font-size: 19px;    margin-bottom: 33px;">WORKING HOURS</p>
+             <ul>
+                 <li><p style="font-size: 14px; margin-bottom: 0;">MONDAY - FRIDAY: <br> <p class="p3"></li>
+                     <p class="p4">7:00am - 8:00pm</p>
+                     <br>
+                     <li><p style="font-size: 14px;margin-bottom: 0;">SATURDAY: <br> <p class="p3"></li>
+                         <p class="p4">8:00am -6:00pm</p>
+                         <br>
+                     <li><p style="font-size: 14px;margin-bottom: 0;">
+                         SUNDAY CLOSED</p> </li>
+                      </ul>
+          </div>
+       </div>
+       <div class="f7">
+     <p class="p5">created BY <span class="s2">BEECODERS</span>&copy;ALL RIGHTS RESERVED.</p>
+       </div>
+     </div>
+</div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />

@@ -1,0 +1,48 @@
+
+<div class="menu">
+    <div *ngFor="let salle of displayedSalle">
+        <img [src]="salle.image" alt="{{ salle.name }}" class="img1" >
+    </div>
+    <ul spellcheck="true" class="menu-list">
+        <li class="l"><a href="/bar" style="font-size: 15px;">home</a></li>
+  
+        <li class="dropdown">
+            <button class="dropdown-btn" style="font-size: 15px;">about us </button>
+            <div class="dropdown-content">
+                <a class="s" href="/ourTeam">Our team</a>
+                <a class="s" href="#">Team details</a>
+                <a class="s" href="/help">Helps & faqs</a>
+                <a class="s" href="#">Faq</a>
+                <a class="s" href="/rev">Revieux</a>
+                <a class="s" href="/contact">Contact us</a>
+  
+            </div>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-btn" style="font-size: 15px;">pages </button>
+          <div class="dropdown-content">
+              <a class="s" href="/Transformation">Transformation</a>
+              <a class="s" href="#">Transformation detailes</a>
+              <a class="s" href="#">Contact</a>
+              <a class="s" href="#">OUR service</a>
+              <a class="s" href="client">Event & offer</a>
+              <a class="s" href="formul">Coming soon</a>
+          </div>
+      </li>
+      <li class="dropdown">
+          <button class="dropdown-btn" style="font-size: 15px;">Classes </button>
+          <div class="dropdown-content">
+              <a class="s" href="#">Our Class</a>
+              <a class="s" href="#">Class detailes</a>
+              <a class="s" href="#">BMI Calculator</a>
+              <a class="s" href="#">Pricing plans</a>
+              <a class="s" href="client">Class Introduction</a>
+             
+          </div>
+      </li>
+      <li class="l"><a href="#" style="font-size: 15px;">Portfolio</a></li>
+      <li class="l"><a href="#" style="font-size: 15px;">Shop</a></li>
+    </ul>
+    <button class="b" routerLink="/form">Join as tday
+  </button>
+  </div>

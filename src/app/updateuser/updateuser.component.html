@@ -1,0 +1,314 @@
+<div class="user">
+    <div class="togelbar">
+        <div class="toglebarcontainer">
+            <div class="toglebarcontainer2" *ngFor="let salle of displayedSalle">
+                <img [src]="salle.image" alt="{{ salle.name }}" class="img1">
+            </div>
+            <div>
+                <button class="bb2" (click)="toggleDropdown4()" style="position: relative;">
+                    <span class="bb2s">{{ countchop }} </span>
+
+                    <div class="ii" style="position: relative;top: 7px;">
+                        <i class='bx bx-cart-download' style="font-size: 22px;animation: none;"></i>
+
+                    </div>
+                </button>
+                <button class="bb2" (click)="toggleDropdown2()" style="position: relative;">
+                    <span class="bb2s"> {{ countAcceptedEvents }}</span>
+
+                    <div class="ii" style="position: relative;top: 7px;">
+                        <i class='bx bx-bell' style="font-size: 22px;"></i>
+                    </div>
+                </button>
+                <div class="dropdown-menu" *ngIf="showDropdown2" style="right: 228px;    width: 318px ">
+                    <!-- Contenu de votre menu déroulant -->
+                    <div class="nottit">
+                        <div style="width: 222px;">
+                            <h6> notification</h6>
+                        </div>
+                        <div style="padding: 0px 12px;width: 63px;">
+                            <a href="" class="dd">Vieux all</a>
+                        </div>
+                    </div>
+                    <div style="display: block;" *ngFor="let event of lastAcceptedEvent">
+                        <div class="ev">
+                            <div class="im">
+                                <img [src]="event.user.image" alt="Image de l'événement" class="ivim">
+                            </div>
+                            <div>
+                                <h6 class="hh6">{{ event.user.username }}</h6>
+                                <a href="" style="text-decoration: none;" [routerLink]="['/eventid', event.id]">
+                                    <p class="pp">{{ event.nom }}</p>
+                                </a>
+                                <p class="pp"><i class="fa-regular fa-clock"
+                                        style="animation: none;font-size: 12px; "></i>
+                                    {{ event.timeAgo }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <a href="" style="font-size: 14px ;text-decoration: none;" class="dd"> Vieux more...</a>
+                    </div>
+                </div>
+                <div *ngIf="userInfo" style="display: inline-block;">
+                    <img [src]="userInfo.image" alt="User Image" class="img2">
+                </div>
+                <div class="b2" *ngIf="userInfo">
+                    <button class="bb2" (click)="toggleDropdown()">
+
+                        <p>{{ userInfo.username }}</p>
+                        <span><i class="fas fa-angle-down icon2"></i></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" *ngIf="showDropdown">
+                        <!-- Contenu de votre menu déroulant -->
+                        <a href="" class="a1" [routerLink]="['/user',userInfo.id]">
+                            <i class='bx bx-user'></i>
+                            profile</a>
+                            <a [routerLink]="['/updateuser',userInfo.id]" class="a1"><i class='bx bx-wrench'></i>my information</a>
+                            <a [routerLink]="['/ibm',userInfo.id]" class="a1"><i class='bx bx-dumbbell'></i>my IBM</a>
+                    </div>
+                </div>
+                <button class="b">
+                    <i class='bx bx-cog'></i>
+                </button>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div style="display: flex;">
+    <div style="position: relative;top: 70px;">
+        <app-baradus></app-baradus>
+    </div>
+    <div class="ss" *ngIf="userInfo">
+        <div class="ss1">
+            <h4 class="h4h">my information</h4>
+            <div style="display: flex;">
+                <p class="pp4">Contacts <span style="margin-left: 8px;">/</span></p>
+                <p class="pp5">my information</p>
+            </div>
+        </div>
+        <div class="ss2">
+            <div class="card">
+                <h1>modify my information</h1>
+                <!-- updateuser.component.html -->
+
+                <div>
+                    <div class="in1">
+                        <label for="username">User name</label><br>
+                        <input type="text" id="username" [(ngModel)]="username" name="username">
+                        <div *ngIf="usernameInvalid" class="error-message">Invalid username</div>
+                    </div>
+
+                    <div class="in1">
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" [(ngModel)]="email" name="email">
+                        <div *ngIf="emailInvalid" class="error-message">Invalid email address</div>
+                    </div>
+                    <div class="in1">
+                        <label for="telephone">Mobile</label><br>
+                        <input type="tel" id="telephone" [(ngModel)]="telephone" name="telephone">
+                        <div *ngIf="telephoneInvalid" class="error-message">Invalid phone number</div>
+                    </div>
+                    <div *ngIf="updateSuccess === true" class="success-message">Update successful!</div>
+                    <div *ngIf="updateSuccess === false" class="error-message">Error during update. Try Again.</div>
+                    <button class="bbf" (click)="onUpdateUserClick(userInfo.id)">Mettre à jour</button>
+                </div>
+
+            </div>
+            <div class="card">
+                <h1>my information</h1>
+                <table>
+
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <td>
+                            {{userInfo.id}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            username
+                        </th>
+                        <td>
+                            {{userInfo.username}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Email
+                        </th>
+                        <td>
+                            {{userInfo.email}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            phone
+                        </th>
+                        <td>
+                            {{userInfo.telephone}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            weight
+                        </th>
+                        <td>
+                            {{userInfo.poid}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            IBM
+                        </th>
+                        <td>
+                            {{userInfo.confibm}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="card2">
+            <h1>my weight information</h1>
+            <div>
+                <div class="in1">
+                    <label for="confibm">Confibm</label><br>
+                    <input type="number" id="confibm" [(ngModel)]="confibm" name="confibm" pattern="[0-9]+">
+                </div>
+                <div class="in1">
+                    <label for="poid">poid</label><br>
+                    <input type="number" id="poid" [(ngModel)]="poid" name="poid" pattern="[0-9]+">
+                </div>
+                <button class="bbf" (click)="updateUser3(userInfo.id)">Mettre à jour</button>
+            </div>
+        </div>
+        <div class="card2">
+            <h1>my photo</h1>
+            <label class="custum-file-upload" for="file">
+                <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <path fill="" d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z" clip-rule="evenodd" fill-rule="evenodd"></path> </g></svg>
+                </div>
+                <div class="text">
+                   <span>Click to upload image</span>
+                   </div>
+                   <input type="file" id="file" (change)="onFileSelected($event)">
+                </label>
+                <div *ngIf="imageSrc" class="upfi">
+                    <img [src]="imageSrc" alt="Image sélectionnée">
+                    <div style="display: block;">
+                        <h5 *ngIf="imageName">{{ imageName }}</h5>
+                        <p *ngIf="imageSize"> {{ imageSize }}</p>
+                    </div>
+                    <button class="bbf" mat-raised-button color="warn" (click)="cancelImageSelection()">Delete</button>
+                </div>
+                <button class="bbf" (click)="UpdateUserImage(userInfo.id)" style="margin-top: 24px;">Update image</button>
+        </div>
+        <div class="card2">
+            <div *ngIf="userInfo">
+                <!-- Afficher les informations de l'utilisateur -->
+                <h1>IBM per month</h1>
+                <!-- Formulaire de mise à jour de l'utilisateur -->
+                <form (submit)="updateUser(userInfo.id)">
+                     <div style="display: flex;" class="ddf">
+                        <div style="display: block;width: 429px;">
+                            <label for="janfi">janfi</label><br>
+                            <input type="number" id="janfi" [(ngModel)]="janfi" name="janfi" required><br>
+                            <label for="fivri">fivri</label><br>
+                            <input type="number" id="fivri" [(ngModel)]="fivri" name="fivri" required><br>
+                            <label for="mars">mars</label><br>
+                            <input type="number" id="mars" [(ngModel)]="mars" name="mars" required><br>
+                            <label for="avrile">avrile</label><br>
+                            <input type="number" id="avrile" [(ngModel)]="avrile" name="avrile" required><br>
+                        </div>
+                        <div style="display: block;width: 429px;">
+                            <label for="mais">mai</label><br>
+                            <input type="number" id="mais" [(ngModel)]="mais" name="mais" required><br>
+                            <label for="mais">juin</label><br>
+                            <input type="number" id="juin" [(ngModel)]="juin" name="juin" required><br>
+                            <label for="juilliat">juilliat</label><br>
+                            <input type="number" id="juilliat" [(ngModel)]="juilliat" name="juilliat" required><br>
+                            <label for="aute">aute</label><br>
+                            <input type="number" id="aute" [(ngModel)]="aute" name="aute" required><br>
+                        </div>
+                        <div style="display: block;">
+                            <label for="mais">septembre</label><br>
+                            <input type="number" id="septembre" [(ngModel)]="septembre" name="septembre" required><br>
+                            <label for="octobre">octobre</label><br>
+                            <input type="number" id="octobre" [(ngModel)]="octobre" name="octobre" required><br>
+                            <label for="decembre">decembre</label><br>
+                            <input type="number" id="decembre" [(ngModel)]="decembre" name="decembre" required><br>
+                            <label for="nauvembre">nauvembre</label><br>
+                            <input type="number" id="nauvembre" [(ngModel)]="nauvembre" name="nauvembre" required><br>
+                        </div>
+                     </div>
+
+
+           
+            
+                    <!-- Ajoutez d'autres champs de formulaire pour les autres attributs de l'utilisateur -->
+            
+                    <button type="submit" class="bbf">Update IBm</button>
+                </form>
+            </div>
+            <div class="dropdown-menu" *ngIf="showDropdown4" style="right: 275px;top: 69px;position: fixed;    width: 318px ">
+                <!-- Contenu de votre menu déroulant -->
+                <div class="nottit">
+                    <div style="width: 222px;">
+                        <h6> notification</h6>
+                    </div>
+                    <div style="padding: 0px 12px;width: 63px;">
+                        <a href="" class="dd">Vieux all</a>
+                    </div>
+                </div>
+                <div style="display: block;" *ngFor="let chop of chops">
+                    <div class="ev">
+                        <div class="im">
+                            <img [src]="chop.imageslid1" alt="Image de l'événement" class="ivim">
+                        </div>
+                        <div>
+                            <h6 class="hh6">{{ chop.name }}</h6>
+                            <a [routerLink]="['/chopdetait2', userInfo.id, chop.id]" style="text-decoration: none;">
+                                <p class="pp">{{ chop.type }}</p>
+                            </a>
+                            <p class="pp">
+                                {{ chop.prix }}DTN
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot">
+                    <a href="" style="font-size: 14px ;text-decoration: none;" class="dd"> Vieux more...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+
+
+
+
+
+
+
+
+
+
+

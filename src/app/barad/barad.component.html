@@ -1,0 +1,34 @@
+<div class="a1">
+  <a [routerLink]="['/admin', id]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+    <i class="fa-solid fa-gauge-high"></i>Dashbord
+  </a>
+
+  <a [routerLink]="['/Slidrev', id]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [class.active]="getActiveTab() === 'salle'" (click)="setActiveTab('salle')">
+    <i class="fa-solid fa-shop"></i>salle
+  </a>
+  <a [routerLink]="['/userclient', id]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [class.active]="getActiveTab() === 'salle'" (click)="setActiveTab('salle')">
+    <i class="fa-solid fa-user"></i>client
+  </a>
+  <a [routerLink]="['/offre', id]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [class.active]="getActiveTab() === 'salle'" (click)="setActiveTab('salle')"><i class="fa-solid fa-euro-sign"></i>offre</a>
+  <a [routerLink]="['/SingupcautchComponent',id]" routerLinkActive="active"><i class="fa-solid fa-dumbbell" ></i>PROFESSIONAL COACH</a>
+
+  <a (click)="toggleMenu()" style="cursor: pointer;"  routerLinkActive="active" [routerLink]="['/Ivent',id]"> 
+    <i class="fa-regular fa-calendar-days"></i>
+    Events   <div [ngClass]="{ 'red-background': currentNumber4 > 0 }"> </div>  
+   </a>
+  
+  <div class="menu-content" [ngClass]="{ 'show': isMenuOpen }">
+    <a style="cursor: pointer;" (click)="switchMenu('salle')" [routerLink]="['/Iventnot', id]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"> 
+      <i class="fa-solid fa-calendar-xmark" style="margin-left: 15px;"></i>
+      event not accepted
+      <div [ngClass]="{ 'red-background': currentNumber4 > 0 }"> </div>  </a>
+    <a style="text-align: center;cursor: pointer;" (click)="switchMenu('prof')"  [routerLink]="['/feedback',id]" routerLinkActive="active">
+      <i class="fa-solid fa-comment"></i>
+      feed back
+    </a>
+  
+  </div>
+  
+
+  <a routerLink="/form" routerLinkActive="active"><i class="fa-solid fa-right-from-bracket fa-flip-both"></i>Logout</a>
+</div>

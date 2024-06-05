@@ -1,0 +1,75 @@
+/* slid.component.css */
+
+.v1 {
+    height: 536px;
+    background-image: url(../../assets/images/h3videobg.jpg);
+    background-attachment: fixed;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+
+  
+
+  }
+  
+  .v2 {
+    height: 536px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .v3{
+    position: absolute;
+  }
+
+  video{
+    height: 535px;
+    width: 936px;
+    position: absolute;
+    left: -430px;
+    z-index: 2;
+  }
+  .video-container {
+    position: absolute;
+    top: 147px;
+    left: 740px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px;
+    z-index: 1;
+  }
+.b1{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 740px;
+  top: 200px;
+  width: 90px;
+  height: 90px;
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 200ms;
+  cursor: pointer;
+  border: #fff;
+}
+.b1:hover{
+    transform: scale(1.2);
+    background-color:#ffc702 ;
+}
+
+  
+  .close-button {
+    position: absolute;
+    top: -142px;
+    right: -339px;
+    background-color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 1;
+    color: #000;
+    border-radius: 50%;
+  }
+  

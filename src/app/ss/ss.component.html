@@ -1,0 +1,26 @@
+<div class="r1">
+   <h1>CUSTOMERS REVIEW</h1>
+   <div class="carousel">
+     <div class="card" *ngFor="let user of displayedVoitures">
+       <div class="slide">
+         <img [src]="user.image" alt="{{ user.username }}" class="img"/>
+         <div class="customer-details">
+           <p> {{ user.username }}</p>
+    
+           <p> {{ user.revieux }}</p>
+           <div class="pagination">
+            <div
+              class="pagination-bullet"
+              *ngFor="let pageIndex of totalPages(); let index = index"
+              [class.active]="index === (currentIndex / itemsPerSlide)"
+              (click)="goToSlide(index)"
+            ></div>
+         </div>
+       </div>
+     </div>
+   </div>
+  
+ </div>
+ 
+
+ 

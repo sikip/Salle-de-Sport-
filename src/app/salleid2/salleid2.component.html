@@ -1,0 +1,47 @@
+
+  <div style="display: flex;">
+    <app-barad></app-barad>
+    <div class="a2">
+      <div>
+        <label for="numero">Numero:</label>
+        <input type="text" id="numero" [(ngModel)]="numero">
+      </div>
+      <div>
+        <label for="time">Time:</label>
+        <input type="text" id="time" [(ngModel)]="time">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" [(ngModel)]="email">
+      </div>
+      <div>
+        <label for="localaisation">Localaisation:</label>
+        <input type="text" id="localaisation" [(ngModel)]="localisation">
+      </div>
+      <div>
+        <label for="locationexact">Locationexact:</label>
+        <input type="text" id="locationexact" [(ngModel)]="locationexact">
+      </div>
+      <div>
+        <label for="latitude">Latitude:</label>
+        <input type="number" id="latitude" [(ngModel)]="latitude">
+      </div>
+      <div>
+        <label for="longitude">Longitude:</label>
+        <input type="number" id="longitude" [(ngModel)]="longitude">
+      </div>
+      <div>
+        <label for="slogon1">Slogon1:</label>
+        <input type="text" id="slogon1" [(ngModel)]="slogon1">
+      </div>
+      <div>
+        <label for="slogon2">Slogon2:</label>
+        <input type="text" id="slogon2" [(ngModel)]="slogon2">
+      </div>
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="name">
+      </div>
+      <button (click)="updateSalle()">Mettre à jour la salle</button>
+    </div>
+  </div>

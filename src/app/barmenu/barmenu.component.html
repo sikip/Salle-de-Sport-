@@ -1,0 +1,59 @@
+<div  class="b1"  >
+  <div class="b3" *ngFor="let salle of displayedSalle">
+    <div class="b4">
+      <div class="b2">
+        <span class="material-symbols-outlined">phone_in_talk</span>
+      </div>
+      <div >
+        <p>{{salle.numero}}</p>
+      </div>
+    </div>
+    <div class="b4">
+      <div class="b2">
+        <span class="material-symbols-outlined">schedule</span>
+      </div>
+      <div>
+        <p>{{salle.time}}</p>
+      </div>
+    </div>
+    <div class="b4">
+      <div class="b2">
+        <span class="material-symbols-outlined">location_on</span>
+      </div>
+      <div>
+        <p><a [href]="generateGoogleMapsLink(salle.latitude, salle.longitude)" target="_blank" class="s">{{salle.localisation}}</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b6" *ngFor="let salle of displayedSalle">
+  <div class="b8">
+    <div class="logo">
+      <img [src]="salle.image" alt="{{ salle.name }}" class="img1" >
+    </div>
+    <div class="button">
+      <app-barm></app-barm>
+    </div>
+
+  </div>
+ <p class="h3" >Healph</p>
+  <p class="hl" data-aos="fade-up" >{{salle.slogon1}}</p>
+  <p class="h2" data-aos="fade-up" data-aos-duration="1000">{{salle.slogon2}}</p> 
+</div>
+<div style="height: 210px;background-color: black;">
+  <img src="../../assets/images/h3_slider_man.png" alt="" data-aos="fade-up" data-aos-duration="2000">
+</div>
+<app-bar2></app-bar2>
+<app-cart></app-cart>
+<app-hh2></app-hh2>
+
+<app-ds></app-ds>
+<app-table></app-table>
+<app-img2></app-img2>
+<app-img3></app-img3>
+<app-slid></app-slid>
+<app-event></app-event>
+<app-map2></app-map2>
+<app-footer></app-footer>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />

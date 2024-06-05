@@ -1,0 +1,71 @@
+<app-bar3></app-bar3>
+<app-bar2></app-bar2>
+<div *ngFor="let salle of displayedSalle">
+<div class="homepage">
+    <div class="homepage2">
+        <div class="homepage3">
+            <div>
+                <h1>CLIENT REVIEWS</h1>
+                <p>Discover authentic reviews from our members about their experience at our gym.</p>
+            </div>
+            <div class="homemain">
+                <div class="homemain2">
+                    <span><a href="/bar">HOME MAIN </a> > REVIEWS</span>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   <div class="body1">
+      <div class="body2">
+         <div class="body3">
+            <div class="body4">
+              <img src="../../assets/images/review.png" alt="Description de l'image">
+                <h2>PLEASE RATE OUR QUALITY FOR US TO PERFECT MORE</h2>
+                <p>We always appreciate your review and that helps us improve our service, thank you for choosing us.</p>
+                <p class="button" style="margin: 8px auto 0;text-align: center;">
+                  <button type="submit" class="btn btn-primary" class="b3" style="margin-bottom: 150px;margin-top: 50px;">CLICK TO LEAVE A TESTIMONIAL</button>
+                </p>
+            </div>
+         </div>
+      </div>
+   </div>
+<div class="body11">
+  <div *ngFor="let reieuxclasses of reieuxclasses">
+    <div *ngIf="reieuxclasses.comment.trim() !== ''">
+
+    
+      <div class="body22">
+        <img src="../../assets/images/review_icon.png" alt="Description de l'image" style="margin-right: 15px;height: 25px;width: 30px;">
+        <div style="display: block;display: block;border-bottom:2px solid #6666;padding-bottom: 35px;">
+          <h4>{{ reieuxclasses.user.username }}</h4>
+          <div class="star-rating">
+            <span class="star" [ngClass]="{'filled': i < reieuxclasses.starRating, 'empty': i >= reieuxclasses.starRating}" *ngFor="let i of [1, 2, 3, 4, 5]">&#9733;</span>
+          </div>
+     <p>
+      {{ reieuxclasses.comment }}
+     </p>
+     
+     
+           </div>
+      </div>
+  
+  </div>
+</div>
+</div>
+
+
+
+  
+
+</div>
+
+<app-footer></app-footer>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">

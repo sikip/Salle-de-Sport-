@@ -1,0 +1,102 @@
+<div style="width: auto;">
+    <table  >
+        <thead>
+          <tr>
+            <th><h2 style="margin: 0;">#</h2></th>
+             <th><h2 style="margin: 0;">salle Name</h2></th>
+             <th><h2 style="margin: 0;">salle Numero</h2></th>
+             <th><h2 style="margin: 0;">salle E-mail</h2></th>
+             <th><h2 style="margin: 0;">salle Location</h2></th>
+             <th><h2 style="margin: 0;">Edit</h2></th>
+             <th><h2 style="margin: 0;">Update</h2></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let salle of salle">
+            <td style="text-align: center;">{{ salle.id }}</td>
+                <td>   {{ salle.name }} </td>
+                <td>   {{ salle.numero }} </td>
+                <td>   {{ salle.email }} </td>
+                <td>   {{ salle.localisation }} </td>
+            <td><button (click)="openModal(salle)" class="b2">edit</button>
+                        
+              <div class="modal" [class.show]="showModal">
+               <div class="modal-dialog">
+                 <div class="modal-content">
+                   <div class="modal-header">
+                    <div class="mod1">
+                      <h1 style="margin: 0;">your salle:</h1>
+                      <button type="button" class="close" aria-label="Close" (click)="toggleModal()">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="mod2">
+                      <label for="id"> ID:</label><br>
+                      <input type="text" placeholder="id" [(ngModel)]="salleToUpdate.id">
+                          <div class="mod4">
+                              <div>
+                                <label for="id"> Name:</label><br>
+                                <input type="text" placeholder="Name" [(ngModel)]="salleToUpdate.name" style="margin-right: 20px;">
+                              </div>
+                                 <div>
+                                  <label for="id"> E-mail:</label><br>
+                                  <input type="text" placeholder="E-mail" [(ngModel)]="salleToUpdate.email">
+                                 </div>
+                          </div>
+                      <label for="id"> numero:</label><br>
+                      <input type="text" placeholder="numero" [(ngModel)]="salleToUpdate.numero"><br>
+                      <div class="mod4">
+                        <div>
+                            <label for="localaisation"> localaisation:</label><br>
+                            <input type="text" placeholder="localaisation" [(ngModel)]="salleToUpdate.localisation" style="margin-right: 20px;">   
+                        </div>
+                        <div>
+                          <div>
+                            <label for="locationexact"> locationexact:</label><br>
+                            <input type="text" placeholder="locationexact" [(ngModel)]="salleToUpdate.locationexact" style="margin-right: 20px;">
+                          </div>
+                        </div>
+                      </div>        
+                      <div class="mod4">
+                        <div>
+                            <label for="latitude"> latitude:</label><br>
+                            <input type="text" placeholder="latitude" [(ngModel)]="salleToUpdate.latitude" style="margin-right: 20px;">   
+                        </div>
+                        <div>
+                          <div>
+                            <label for="longitude"> longitude:</label><br>
+                            <input type="text" placeholder="longitude" [(ngModel)]="salleToUpdate.longitude" style="margin-right: 20px;">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mod4">
+                        <div>
+                            <label for="latitude"> slogon1:</label><br>
+                            <input type="text" placeholder="slogon1" [(ngModel)]="salleToUpdate.slogon1" style="margin-right: 20px;">   
+                        </div>
+                        <div>
+                          <div>
+                            <label for="slogon2"> slogon2:</label><br>
+                            <input type="text" placeholder="longitude" [(ngModel)]="salleToUpdate.slogon2" style="margin-right: 20px;">
+                          </div>
+                        </div>
+                      </div>
+              
+                    </div>
+                  
+                   </div>
+                   <div class="modal-body">
+                    
+           
+                   </div>
+                 </div>
+               </div>
+             </div>
+            </td>
+            <td> <button [routerLink]="['/sall',salle.id]" class="b2" style="background-color: black; color:#ffffff;width: 60px;" >Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+    
+</div>

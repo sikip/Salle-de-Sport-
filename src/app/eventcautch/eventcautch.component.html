@@ -1,0 +1,263 @@
+<div class="user">
+    <div class="togelbar">
+        <div class="toglebarcontainer">
+            <div class="toglebarcontainer2" *ngFor="let salle of displayedSalle">
+                <img [src]="salle.image" alt="{{ salle.name }}" class="img1">
+            </div>
+            <div>
+                <button class="bb2" (click)="toggleDropdown4()" style="position: relative;">
+                    <span class="bb2s">{{ countchop }} </span>
+
+                    <div class="ii" style="position: relative;top: 7px;">
+                        <i class='bx bx-cart-download' style="font-size: 22px;animation: none;"></i>
+                    </div>
+                </button>
+                <button class="bb2" (click)="toggleDropdown2()" style="position: relative;">
+                    <span class="bb2s"> {{ countAcceptedEvents }}</span>
+
+                    <div class="ii" style="position: relative;top: 7px;">
+                        <i class='bx bx-bell' style="font-size: 22px;"></i>
+                    </div>
+                </button>
+                <div class="dropdown-menu" *ngIf="showDropdown2" style="right: 228px;    width: 318px ">
+                    <!-- Contenu de votre menu déroulant -->
+                    <div class="nottit">
+                        <div style="width: 222px;">
+                            <h6> notification</h6>
+                        </div>
+                        <div style="padding: 0px 12px;width: 63px;">
+                            <a href="" class="dd">Vieux all</a>
+                        </div>
+                    </div>
+                    <div style="display: block;" *ngFor="let event of lastAcceptedEvent">
+                        <div class="ev">
+                            <div class="im">
+                                <img [src]="event.user.image" alt="Image de l'événement" class="ivim">
+                            </div>
+                            <div>
+                                <h6 class="hh6">{{ event.user.username }}</h6>
+                                <a href="" style="text-decoration: none;" [routerLink]="['/eventid', event.id]">
+                                    <p class="pp">{{ event.nom }}</p>
+                                </a>
+                                <p class="pp"><i class="fa-regular fa-clock"
+                                        style="animation: none;font-size: 12px; "></i>
+                                    {{ event.timeAgo }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <a href="" style="font-size: 14px ;text-decoration: none;" class="dd"> Vieux more...</a>
+                    </div>
+                </div>
+                <div *ngIf="userInfo" style="display: inline-block;">
+                    <img [src]="userInfo.image" alt="User Image" class="img2">
+                </div>
+                <div class="b2" *ngIf="userInfo">
+                    <button class="bb2" (click)="toggleDropdown()">
+
+                        <p>{{ userInfo.username }}</p>
+                        <span><i class="fas fa-angle-down icon2"></i></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" *ngIf="showDropdown">
+                        <!-- Contenu de votre menu déroulant -->
+                        <a href="" class="a1" [routerLink]="['/user',userInfo.id]">
+                            <i class='bx bx-user'></i>
+                            profile</a>
+                            <a [routerLink]="['/updateuser',userInfo.id]" class="a1"><i class='bx bx-wrench'></i>my information</a>
+                            <a [routerLink]="['/ibm',userInfo.id]" class="a1"><i class='bx bx-dumbbell'></i>my IBM</a>
+                    </div>
+                </div>
+                <button class="b">
+                    <i class='bx bx-cog'></i>
+                </button>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div style="display: flex;">
+    <div style="position: relative;top: 70px;">
+        <app-baracautch></app-baracautch>
+    </div>
+    <div class="ss" *ngIf="userInfo">
+        <div class="ss1">
+            <h4 class="h4h">my event</h4>
+            <div style="display: flex;">
+                <p class="pp4">Contacts <span style="margin-left: 8px;">/</span></p>
+                <p class="pp5">my event</p>
+            </div>
+        </div>
+        <div class="ss2">
+           
+        </div>
+
+
+        <div class="card2">
+            <div>
+                <h1>Add event</h1>
+                <form (ngSubmit)="addEvent(userInfo.id)">
+                    <div class="in1">
+                        <label for="nom">event name:</label><br>
+                        <input type="text" id="nom" name="nom" [(ngModel)]="event.nom" required>
+            
+                    </div>
+                    <div class="in1">
+                        <label for="tag">event tag:</label><br>
+                        <input type="text" id="tag" name="tag" [(ngModel)]="event.tag" required>
+                    </div>
+                    <div class="in1">
+                        <label for="tag">event tag:</label><br>
+                        <input type="text" id="tag" name="tag" [(ngModel)]="event.tag" required>
+                    </div>
+                    <div class="in1">
+                        <label for="nomecrivan">event RighterName:</label><br>
+                        <input type="text" id="nomecrivan" name="nomecrivan" [(ngModel)]="event.nomecrivan" required>
+                    </div>
+                    <div class="in1">
+                        <label for="article">event article:</label><br>
+                        <input type="text" id="article" name="article" [(ngModel)]="event.article" required>
+                    </div>
+                    <div class="in1">
+                        <label for="paragraphs">event paragraphs:</label><br>
+                        <input type="text" id="paragraphs" name="paragraphs" [(ngModel)]="event.paragraphs" required>
+                    </div>
+                    <div class="in1">
+                        <label for="paragraphe2">event paragraphe2:</label><br>
+                        <input type="text" id="paragraphe2" name="paragraphe2" [(ngModel)]="event.paragraphe2" required>
+                    </div>
+                    <div class="in1">
+                        <label for="paragraphe2">event paragraphe3:</label><br>
+                        <input type="text" id="paragraphe3" name="paragraphe3" [(ngModel)]="event.paragraphe3" required>
+                    </div>
+                    <div class="in1">
+                        <label for="nbplace">nbplace:</label><br>
+                        <input type="number" id="nbplace" name="nbplace" [(ngModel)]="event.nbplace" required>
+                    </div>
+                    <div class="in1">
+                        <label for="prix">price:</label><br>
+                        <input type="number" id="prix" name="prix" [(ngModel)]="event.prix" required>
+                    </div>
+                   <div class="in1">
+                    <label for="datee">Date:</label> <br>
+                    <input type="date" id="datee" name="datee" [(ngModel)]="event.datee" required>
+                   </div>
+            
+                    <div class="in1">
+                        <label for="petdescription">Description:</label><br>
+                        <textarea id="petdescription" name="petdescription" [(ngModel)]="event.petdescription"  required style="width: 94%;"></textarea>
+                    </div>
+                    <button type="submit" class="bbf">add event</button>
+                </form>
+            </div>
+       
+
+
+  
+  
+            <div class="dropdown-menu" *ngIf="showDropdown4" style="right: 275px;top: 69px;position: fixed;    width: 318px ">
+                <!-- Contenu de votre menu déroulant -->
+                <div class="nottit">
+                    <div style="width: 222px;">
+                        <h6> notification</h6>
+                    </div>
+                    <div style="padding: 0px 12px;width: 63px;">
+                        <a href="" class="dd">Vieux all</a>
+                    </div>
+                </div>
+                <div style="display: block;" *ngFor="let chop of chops">
+                    <div class="ev">
+                        <div class="im">
+                            <img [src]="chop.imageslid1" alt="Image de l'événement" class="ivim">
+                        </div>
+                        <div>
+                            <h6 class="hh6">{{ chop.name }}</h6>
+                            <a [routerLink]="['/chopdetait2', userInfo.id, chop.id]" style="text-decoration: none;">
+                                <p class="pp">{{ chop.type }}</p>
+                            </a>
+                            <p class="pp">
+                                {{ chop.prix }}DTN
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot">
+                    <a href="" style="font-size: 14px ;text-decoration: none;" class="dd"> Vieux more...</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card2">
+            <div class="card2">
+                <div>
+                    <table *ngIf="lastEvent">
+
+                        <tr>
+                            <th>
+                                #
+                            </th>
+                            <td>
+                                {{lastEvent.id}}
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <th>
+                                Event Name
+                            </th>
+                            <td>
+                                {{lastEvent.nom}}
+                            </td>
+                        </tr>
+                      <tr>
+                       <th>
+                        add photos
+                       </th>
+                        <td>
+                            <button class="bbf" [routerLink]="['/addphoto', userInfo.id, lastEvent.id]" >add photo</button>
+                        </td>
+                      </tr>
+                  <tr>
+                    <th>
+                        add Vedeo
+                    </th>
+                    <td>
+                        <button class="bbf" [routerLink]="['/vedeocreated', userInfo.id, lastEvent.id]" >add vedeo</button>
+                    </td>
+                  </tr>
+
+                    </table>
+                   
+                    <div *ngIf="!lastEvent">
+                      <p>Aucun événement trouvé.</p>
+                    </div>
+                  </div>
+              </div>
+        </div>
+    </div>
+
+</div>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+
+
+
+
+
+
+
+
+
+
+

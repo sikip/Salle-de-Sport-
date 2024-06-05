@@ -1,0 +1,28 @@
+<div class="admin1">
+    <app-barad></app-barad>
+    <div class="a2">
+        <h2 style="margin-bottom: 25px;">all client</h2>
+
+<div style="width: auto;">
+    <table  >
+      <thead>
+        <tr>
+          <th style="margin: 0;">#</th>
+           <th style="margin: 0;"> Name</th>
+           <th style="margin: 0;"> E-mail</th>
+           <th style="margin: 0;">vieux profile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let user of users">
+          <td style="text-align: center;">{{  user.id  }}</td>
+          <td>   {{ user.username }} </td>
+          <td>   {{ user.email }} </td>
+          <td>   <button class="b2" [routerLink]="['/', ]">vieux profile</button></td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

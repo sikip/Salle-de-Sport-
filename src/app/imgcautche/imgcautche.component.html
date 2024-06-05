@@ -1,0 +1,24 @@
+<!-- example.component.html -->
+
+
+<div style="width: auto;">
+  <table  >
+    <thead>
+      <tr>
+        <th><h2 style="margin: 0;">#</h2></th>
+         <th><h2 style="margin: 0;">Cautche Name</h2></th>
+         <th><h2 style="margin: 0;">Cautche E-mail</h2></th>
+         <th><h2 style="margin: 0;">vieux profile</h2></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let user of users">
+        <td style="text-align: center;">{{  user.id  }}</td>
+        <td>   {{ user.username }} </td>
+        <td>   {{ user.email }} </td>
+        <td>   <button class="b2" [routerLink]="['/cautch', user.id]">vieux profile</button></td>
+       
+      </tr>
+    </tbody>
+  </table>
+</div>

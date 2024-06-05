@@ -1,0 +1,117 @@
+<div class="user">
+    <div class="togelbar">
+        <div class="toglebarcontainer">
+            <div class="toglebarcontainer2" *ngFor="let salle of displayedSalle">
+                <img [src]="salle.image" alt="{{ salle.name }}" class="img1">
+            </div>
+            <div>
+                <div style="position: absolute;left: 282px;top: 15px;">
+                    <input class="in22" type="text" [(ngModel)]="query" (keyup.enter)="search()"
+                        placeholder="Enter your search...">
+                    <i class='bx bx-search-alt'
+                        style="font-size: 19px;line-height: 38px;position: absolute;left: 13px;cursor: pointer;"></i>
+                </div>
+                <button class="bb2" (click)="toggleDropdown2()" style="position: relative;">
+                    <span class="bb2s"> {{ countAcceptedEvents }}</span>
+
+                    <div class="ii" style="position: relative;top: 7px;">
+                        <i class='bx bx-bell' style="font-size: 22px;"></i>
+                    </div>
+                </button>
+                <div class="dropdown-menu" *ngIf="showDropdown2" style="right: 228px;    width: 318px ">
+                    <!-- Contenu de votre menu déroulant -->
+                    <div class="nottit">
+                        <div style="width: 222px;">
+                            <h6> notification</h6>
+                        </div>
+                        <div style="padding: 0px 12px;width: 63px;">
+                            <a href="" class="dd">Vieux all</a>
+                        </div>
+                    </div>
+                    <div style="display: block;" *ngFor="let event of lastAcceptedEvent">
+                        <div class="ev">
+                            <div class="im">
+                                <img [src]="event.user.image" alt="Image de l'événement" class="ivim">
+                            </div>
+                            <div>
+                                <h6 class="hh6">{{ event.user.username }}</h6>
+                                <a href="" style="text-decoration: none;" [routerLink]="['/eventid', event.id]">
+                                    <p class="pp">{{ event.nom }}</p>
+                                </a>
+                                <p class="pp"><i class="fa-regular fa-clock"
+                                        style="animation: none;font-size: 12px; "></i>
+                                    {{ event.timeAgo }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <a href="" style="font-size: 14px ;text-decoration: none;" class="dd"> Vieux more...</a>
+                    </div>
+                </div>
+                <div *ngIf="userInfo" style="display: inline-block;">
+                  <img *ngIf="userInfo.image" [src]="userInfo.image" alt="User Image" class="img2">
+                </div>
+                <div class="b2" *ngIf="userInfo">
+                    <button class="bb2" (click)="toggleDropdown()">
+
+                        <p>{{ userInfo.username }}</p>
+                        <span style="top: 24px;"><i class="fas fa-angle-down icon2"></i></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" *ngIf="showDropdown">
+                        <!-- Contenu de votre menu déroulant -->
+                        <a href="" class="a1" [routerLink]="['/user',userInfo.id]">
+                            <i class='bx bx-user'></i>
+                            profile</a>
+                        <a [routerLink]="['/updateuser',userInfo.id]" class="a1"><i class='bx bx-wrench'></i>my information</a>
+                        <a [routerLink]="['/ibm',userInfo.id]" class="a1"><i class='bx bx-dumbbell'></i>my IBM</a>
+                    </div>
+                </div>
+                <button class="b">
+                    <i class='bx bx-cog'></i>
+                </button>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div style="display: flex;">
+    <div style="position: relative;top: 70px;">
+        <app-baradus></app-baradus>
+    </div>
+    <div class="ss" *ngIf="userInfo">
+        <div class="ss1">
+            <h4 class="h4h">IBM</h4>
+            <div style="display: flex;">
+                <p class="pp4">IBM <span style="margin-left: 8px;">/</span></p>
+                <p class="pp5">Profile</p>
+            </div>
+        </div>
+             <app-recom></app-recom>
+    </div>
+    <div *ngIf="searchResults.length > 0" class="bb2b" (click)="toggleDropdown3()">
+        <div class="bb21">
+            <h1>search result</h1>
+       </div>
+        <div style="display: flex;" *ngFor="let result of searchResults">
+
+            <img [src]="result.image" alt="Image">
+            <div class="evv3">
+                <a href="" [routerLink]="['/initlest', userInfo.id, result.id]">{{ result.nom }} </a>
+                <a href="" [routerLink]="['/inscriptioncour', userInfo.id, result.id]">{{ result.name }}</a>
+                {{ result.username }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />

@@ -1,0 +1,13 @@
+<div *ngFor="let commentaire of commentaires" class="com1">
+   <div class="com2">
+      <img src="../../assets/images/dfb8770ebc590a2eaeb851c87597dfc7.png" alt="">
+      <div>
+        <div class="com3">
+              <h4>{{commentaire.nom}}</h4>
+              <p class="date">{{ commentaire.addedDate | date:'dd/MM/yyyy' }}</p>
+              <p  class="date">"{{commentaire.commentaire}}"</p>
+
+        </div>
+      </div>
+   </div>
+</div>

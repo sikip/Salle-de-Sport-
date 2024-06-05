@@ -1,0 +1,81 @@
+<div class="admin1">
+  <app-barad></app-barad>
+  <div class="a2">
+    <div class="a3">
+      <h2>
+        offer
+      </h2>
+    </div>
+    <div>
+      <h2 style="margin-bottom: 20px;">add offre</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div>
+          <label for="nom">Nom de l'offre:</label>
+          <input type="text" id="nom" name="nom" [(ngModel)]="offre.nom" required>
+        </div>
+        <div>
+          <label for="prix">Prix:</label>
+          <input type="number" id="prix" name="prix" [(ngModel)]="offre.prix" required>
+        </div>
+        <div>
+          <label for="classe">Classe:</label>
+          <input type="text" id="classe" name="classe" [(ngModel)]="offre.classe" required>
+        </div>
+        <div>
+          <label for="month">Mois:</label>
+          <input type="text" id="month" name="month" [(ngModel)]="offre.month" required>
+        </div>
+        <div>
+          <label for="message">Massage:</label>
+          <input type="number" id="message" name="message" [(ngModel)]="offre.message" required>
+        </div>
+        <div>
+          <label for="entrepr">cautche speciale:</label>
+          <input type="number" id="entrepr" name="entrepr" [(ngModel)]="offre.entrepr" required>
+        </div>
+        <button type="submit" class="b1">add offre</button>
+      </form>
+
+      <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+      </div>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+    </div>
+    <div>
+      <h2 style="margin-top: 20px;margin-bottom: 20px;"> offre list</h2>
+      <div *ngIf="offres.length === 0" class="no-offre-message">
+        {{ errorMessage }}
+      </div>
+
+      <table *ngIf="offres.length > 0">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Classe</th>
+            <th>Mois</th>
+            <th>Message</th>
+            <th>pesonel coach</th>
+            <th>update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let uneOffre of offres">
+            <td>{{ uneOffre.nom }}</td>
+            <td>{{ uneOffre.prix }}</td>
+            <td>{{ uneOffre.classe }}</td>
+            <td>{{ uneOffre.month }}</td>
+            <td>{{ uneOffre.message }}</td>
+            <td>{{ uneOffre.entrepr }}</td>
+            <td> <button [routerLink]="['/offreid',uneOffre.id]" class="b3">update</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="admin1">
+    <app-barad></app-barad>
+  <div class="a2">
+    <div class="a3">
+        <h2>
+          feedback
+        </h2>
+        </div>
+        <!-- feedback.component.html -->
+
+        <div *ngIf="commentaire && commentaire.length">
+  
+            <table>
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Email</th>
+                  <th>Commentaire</th>
+                  <th>Événement name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let comm of commentaire">
+                  <td>{{ comm.nom }}</td>
+                  <td>{{ comm.email }}</td>
+                  <td>{{ comm.commentaire }}</td>
+                  <td>{{ comm.event.nom }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div *ngIf="!commentaire || commentaire.length === 0">
+            <p>Aucun commentaire trouvé.</p>
+          </div>
+  
+  </div>
+</div>
+

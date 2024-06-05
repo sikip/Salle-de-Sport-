@@ -1,0 +1,67 @@
+ <div style="display: flex;">
+    <app-barad></app-barad>
+    <div class="a2">
+      <h2>Mettre à jour la salle</h2>
+      <form (submit)="updateSalle()">
+        <div class="form-group">
+          <label for="numero">Numéro:</label>
+          <input type="text" class="form-control" id="numero" name="numero" [(ngModel)]="numero" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Time:</label>
+          <input type="text" class="form-control" id="time" name="time" [(ngModel)]="time" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required>
+        </div>
+        <div class="form-group">
+          <label for="localaisation">Localaisation:</label>
+          <input type="text" class="form-control" id="localaisation" name="localaisation" [(ngModel)]="localaisation" required>
+        </div>
+        <div class="form-group">
+          <label for="locationexact">Location Exact:</label>
+          <input type="text" class="form-control" id="locationexact" name="locationexact" [(ngModel)]="locationexact" required>
+        </div>
+        <div class="form-group">
+          <label for="latitude">Latitude:</label>
+          <input type="number" class="form-control" id="latitude" name="latitude" [(ngModel)]="latitude" required>
+        </div>
+        <div class="form-group">
+          <label for="longitude">Longitude:</label>
+          <input type="number" class="form-control" id="longitude" name="longitude" [(ngModel)]="longitude" required>
+        </div>
+        <div class="form-group">
+          <label for="slogon1">Slogon 1:</label>
+          <input type="text" class="form-control" id="slogon1" name="slogon1" [(ngModel)]="slogon1" required>
+        </div>
+        <div class="form-group">
+          <label for="slogon2">Slogon 2:</label>
+          <input type="text" class="form-control" id="slogon2" name="slogon2" [(ngModel)]="slogon2" required>
+        </div>
+        <div class="form-group">
+          <label for="Price">Price:</label>
+          <input type="number" class="form-control" id="Price" name="Price" [(ngModel)]="prix" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="border: none; width: 100%;height: 30px ;background-color: #ffc702;cursor: pointer;border-radius: 5px;">Mettre à jour</button>
+      </form>
+      <h2 style="margin-top: 20px;">modifier les images de la salle</h2>
+      <div style="display: flex; margin-bottom: 20px;">
+   <div style="display: block;margin-right: 100px;">
+   <h2>modification of lego image</h2>
+   <input type="file" (change)="onFileSelected($event, 2)" accept="image/*">
+   </div>
+   <div style="display: block;margin-right: 100px;">
+     <h2>modification of cover image</h2>
+     <input type="file" (change)="onFileSelected($event, 1)" accept="image/*">
+   </div>
+    <div>
+     <button (click)="ajouterImagesALaSalle()" style="border: none;height: 30px ;background-color: #ffc702;cursor: pointer;border-radius: 5px;">Ajouter Images</button>
+    </div>
+   </div>
+    </div>
+   </div>

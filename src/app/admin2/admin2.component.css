@@ -1,0 +1,107 @@
+th{
+    border-bottom: 2px solid #eaeaea;
+    width: 129px;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+td{
+    text-align: center;
+    padding: 8px;
+    border-bottom: 2px solid #eaeaea;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; /* Positionnement au sommet de la page */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .modal.show {
+    display: block;
+  }
+  
+  .modal-dialog {
+    position: absolute;
+    top: 45%;
+    /* Centrez le modal verticalement */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+ 
+    border-radius: 10px;
+    animation: slideDown 0.5s ease, fadeIn 0.5s ease;
+  }
+  
+ 
+  .modal-header {
+
+  }
+  
+  .close {
+    margin-left: 371px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+  }
+  
+  @keyframes slideDown {
+    0% { top: -100%; }
+    100% { top: 00%; } /* Animer vers le centre de la page */
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  .b2{
+    padding: 5px;
+    width: 44px;
+    height: 32px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ffc702;
+   cursor: pointer;
+  }
+  .mod1{
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+  }
+  .mod4{
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+  }
+  .mod2{
+    padding: 1rem;
+    text-align: left;
+  }
+  label{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    font-family: Roboto, sans-serif;
+    letter-spacing: normal;
+    
+  }
+  input{
+    margin-top: 9px ;
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 32px;
+    font-family: Roboto, sans-serif;
+    letter-spacing: normal;
+   padding-left: 10px;
+   margin-bottom: 10px;
+   width: 221px;
+  }

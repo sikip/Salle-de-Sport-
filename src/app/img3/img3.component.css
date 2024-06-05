@@ -1,0 +1,220 @@
+.im1{
+    background-color: black;
+}
+.ligne{
+    display: inline-flex;
+    width: 284px;
+    height: 1px;
+    background-color: #d8d8d8;
+    position: relative;
+} 
+
+.ligne:before{
+    left: 50%;
+    transform: translateX(-50%) skewX(-45deg);
+    content: "";
+    display: block;
+    width: 112px;
+    height: 4px;
+    position: absolute;
+    left: 139px ;
+    top: -2px;
+    background-color: #FFC702;
+}
+h1{
+    color: aliceblue;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 0.05em;
+    font-family: epilog, sans-serif; 
+}
+p{
+    text-align: center;
+    font-size: 15px;
+    color: aliceblue;
+    line-height: 1.52em;
+    font-family: epilog2, sans-serif; 
+}
+.im3{
+    text-align: center;
+}
+h1{
+    color: #ffffff;
+}
+.img5{
+ display: flex;
+ padding-left: 250px;
+}
+.img55{
+width: 170px;
+height: 170px;
+padding: 20px;
+border: 2px dashed #595959;
+border-radius: 50%;
+margin-bottom: 32px;
+position: relative;
+}
+.img66{
+    width: 170px;
+    height: 170px;
+    padding: 20px;
+    border: 2px dashed #595959;
+    border-radius: 50%;
+    margin-bottom: 32px;
+    position: relative;
+    margin-left: 179px;
+    }
+    
+img{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    position: absolute;
+}
+.img555{
+    width: 44px;
+    height: 41px;
+    border-radius: 50%;
+    background-color: #FFC702;
+    position: absolute;
+    text-align: center;
+    right: 84px;
+    top: -19px;
+    z-index: 2;
+    padding-top: 4px;
+    animation: pulse-white 2s infinite;
+}
+.img55:hover .img555 {
+    animation: none; /* Annuler l'animation lorsque la souris survole l'image */
+    animation: index-pulse 1200ms ease-out infinite;
+  }
+  @keyframes pulse-white {
+    0% {
+      transform: scale(.9);
+      background-color: #FFC702;
+    }
+  
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 15px hsla(0, 0%, 100%, 0);
+    }
+  
+    to {
+      transform: scale(.9);
+      box-shadow: 0 0 0 0 hsla(0, 0%, 100%, 0);
+    }
+  }
+  .img66:hover .img555 {
+    animation: none; /* Annuler l'animation lorsque la souris survole l'image */
+    transform: scale(1.1); /* Appliquer un effet de zoom lors du survol */
+  }
+  @keyframes pulse-white {
+    0% {
+      transform: scale(.9);
+      background-color: #FFC702;
+    }
+  
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 15px hsla(0, 0%, 100%, 0);
+    }
+  
+    to {
+      transform: scale(.9);
+      box-shadow: 0 0 0 0 hsla(0, 0%, 100%, 0);
+    }
+  }
+.p{
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    font-size: 24px;
+}
+hr{
+    width: 176px;
+    height: 0;
+    position: absolute;
+    top: 5399px;
+    right: 860px;
+    border: 1px dashed #595959;
+}
+.h2{
+    width: 176px;
+    height: 0;
+    position: absolute;
+    top: 223px;
+    right: 234px;
+    border: 1px dashed #ffffff;
+}
+.fl{
+    height: 21px;
+    width: 21px;
+    position: absolute;
+    top: 5396px;
+    right: 960px;
+    z-index: 1
+}
+.f2{
+    height: 21px;
+    width: 21px;
+    position: absolute;
+    top: 5396px;
+    right: 580px;
+    z-index: 1
+}
+.hr2{
+    width: 176px;
+    height: 0;
+    position: absolute;
+    top: 5399px;
+    right: 469px;
+    border: 1px dashed #6A6A6A;
+}
+.cc1{
+    display: flex;
+}
+.t1{
+    text-align: center;
+    margin-left: 197px;
+}
+.t2{
+    text-align: center;
+    margin-left: 110px;
+}
+.t3{
+    text-align: center;
+    margin-left: 90px;
+}
+.t1 h1{
+    color: #FFFFFF;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.25;
+    font-family: epilog, sans-serif; 
+    margin: 0 0 23px;
+    font-weight: bold;
+}
+.t2 h1{
+    color: #FFFFFF;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.25;
+    font-family: epilog, sans-serif; 
+    margin: 0 0 23px;
+    font-weight: bold;  
+}
+.t3 h1{
+    color: #FFFFFF;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.25;
+    font-family: epilog, sans-serif; 
+    margin: 0 0 23px;
+    font-weight: bold;  
+}

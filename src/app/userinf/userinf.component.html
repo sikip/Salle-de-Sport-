@@ -1,0 +1,305 @@
+<div class="user">
+    <div class="togelbar">
+        <div class="toglebarcontainer">
+            <div class="toglebarcontainer2" *ngFor="let salle of displayedSalle">
+                <img [src]="salle.image" alt="{{ salle.name }}" class="img1">
+            </div>
+            <div>
+                <div style="position: absolute;left: 282px;top: 15px;">
+                    <input class="in22" type="text" [(ngModel)]="query" (keyup.enter)="search()"
+                        placeholder="Enter your search...">
+                    <i class='bx bx-search-alt'
+                        style="font-size: 19px;line-height: 38px;position: absolute;left: 13px;cursor: pointer;"></i>
+                </div>
+                <button class="bb2" (click)="toggleDropdown4()" style="position: relative;">
+                    <span class="bb2s">{{ countchop }} </span>
+
+                    <div class="ii" style="position: relative;top: 7px;">
+                        <i class='bx bx-cart-download' style="font-size: 22px;animation: none;"></i>
+
+                    </div>
+                </button>
+                <button class="bb2" (click)="toggleDropdown2()" style="position: relative;">
+                    <span class="bb2s"> {{ countAcceptedEvents }}</span>
+
+                    <div class="ii" style="position: relative;top: 7px;">
+                        <i class='bx bx-bell' style="font-size: 22px;"></i>
+                    </div>
+                </button>
+                <div class="dropdown-menu" *ngIf="showDropdown2" style="right: 228px;    width: 318px ">
+                    <!-- Contenu de votre menu déroulant -->
+                    <div class="nottit">
+                        <div style="width: 222px;">
+                            <h6> notification</h6>
+                        </div>
+                        <div style="padding: 0px 12px;width: 63px;">
+                            <a href="" class="dd">Vieux all</a>
+                        </div>
+                    </div>
+                    <div style="display: block;" *ngFor="let event of lastAcceptedEvent">
+                        <div class="ev">
+                            <div class="im">
+                                <img [src]="event.user.image" alt="Image de l'événement" class="ivim">
+                            </div>
+                            <div>
+                                <h6 class="hh6">{{ event.user.username }}</h6>
+                                <a href="" style="text-decoration: none;" [routerLink]="['/eventid', event.id]">
+                                    <p class="pp">{{ event.nom }}</p>
+                                </a>
+                                <p class="pp"><i class="fa-regular fa-clock"
+                                        style="animation: none;font-size: 12px; "></i>
+                                    {{ event.timeAgo }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <a href="" style="font-size: 14px ;text-decoration: none;" class="dd"> Vieux more...</a>
+                    </div>
+                </div>
+                <div *ngIf="userInfo" style="display: inline-block;">
+                  <img *ngIf="userInfo.image" [src]="userInfo.image" alt="User Image" class="img2">
+                </div>
+                <div class="b2" *ngIf="userInfo">
+                    <button class="bb2" (click)="toggleDropdown()">
+
+                        <p>{{ userInfo.username }}</p>
+                        <span style="top: 24px;"><i class="fas fa-angle-down icon2"></i></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" *ngIf="showDropdown">
+                        <!-- Contenu de votre menu déroulant -->
+                        <a href="" class="a1" [routerLink]="['/user',userInfo.id]">
+                            <i class='bx bx-user'></i>
+                            profile</a>
+                        <a [routerLink]="['/updateuser',userInfo.id]" class="a1"><i class='bx bx-wrench'></i>my information</a>
+                        <a [routerLink]="['/ibm',userInfo.id]" class="a1"><i class='bx bx-dumbbell'></i>my IBM</a>
+                        <a [routerLink]="['/qrcode',userInfo.id]" class="a1"><i class='bx bx-qr'></i>my QRcode</a>
+
+                    </div>
+                </div>
+                <button class="b">
+                    <i class='bx bx-cog'></i>
+                </button>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div style="display: flex;">
+    <div style="position: relative;top: 70px;">
+        <app-baradus></app-baradus>
+    </div>
+    <div class="ss" *ngIf="userInfo">
+        <div class="ss1">
+            <h4 class="h4h">PROFILE</h4>
+            <div style="display: flex;">
+                <p class="pp4">Contacts <span style="margin-left: 8px;">/</span></p>
+                <p class="pp5">Profile</p>
+            </div>
+        </div>
+        <div class="ss2">
+            <div class="ss3">
+                <div class="car1">
+                    <div class="im2">
+                        <div class="imus">
+                            <img [src]="userInfo.image" alt="User Image">
+                        </div>
+                        <div style="display: block;">
+                            <div class="con1">
+                                <p class="usnam">{{ userInfo.username }}</p>
+                                <div class="con2">
+                                    <div class="con3" style="    margin-right: 33px;">
+                                        <p class="usib"><i class="fa-solid fa-dumbbell"></i>{{ userInfo.confibm }}</p>
+                                        <p class="usib2">IBM </p>
+                                    </div>
+                                    <div class="con3">
+                                        <p class="usib"> <span class="material-symbols-outlined">
+                                                weight
+                                            </span> {{ userInfo.poid }}</p>
+                                        <p class="usib2">weight </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="connn2">
+                                <h4 class="title">
+                                    trainer Information
+                                </h4>
+                                <p *ngFor="let salle of displayedSalle">
+                                    Hello ,I'm {{salle.name}}, your personal fitness guide. Explore our many workout
+                                    programs and discover a new way to get fit with our gym platform
+                                </p>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th> Full Name :</th>
+                                            <td style="padding-right: 0px;padding-left: 0;">{{userInfo.username }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Mobile :</th>
+                                            <td style="padding-right: 0px;padding-left: 0;">{{userInfo.telephone }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>E-mail :</th>
+                                            <td style="padding-right: 0px;padding-left: 0;">{{userInfo.email }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="conn3">
+                                <h4>Our Classe</h4>
+                                <ul *ngFor="let classe of classes; let isFirst = first">
+                                    <li>
+                                        <div class="ic">
+                                            <i [ngClass]="{'first-icon': isFirst}" class='bx bx-right-arrow-circle'></i>
+                                        </div>
+                                        <a [routerLink]="['/inscription', userInfo.id, classe.id]"
+                                            style="text-decoration: none;">
+                                            <h5><i class="fa-solid fa-graduation-cap"></i> {{ classe.name }}</h5>
+                                        </a>
+                                        <h5 style="margin-top: 5px; font-size: 13px;color: rgba(85, 110, 230);">
+                                            {{classe.addedDate | date }}</h5>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="par2">
+                <div style="display: flex;">
+                    <div class="card">
+                        <div class="card2">
+                            <div>
+                                <p>Our classe</p>
+                                <h4>{{ numberOfClasses }}</h4>
+                            </div>
+                            <div class="icc">
+                                <span> <i class="fa-solid fa-graduation-cap"></i></span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card2">
+                            <div>
+                                <p>Our IBM</p>
+                                <h4>{{ userInfo.confibm }}</h4>
+                            </div>
+                            <div class="icc">
+                                <span> <i class="fa-solid fa-dumbbell"></i></span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card2">
+                            <div>
+                                <p>Eventt</p>
+                                <h4> {{ eventsCount }}</h4>
+                            </div>
+                            <div class="icc">
+                                <span><i class='bx bx-calendar-event' style="right: 13px;font-size: 22px;"></i>
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart">
+                    <div>
+                        <canvas id="barChart" width="695" height="340" style="margin-left: 19px;
+                    display: block;
+                    box-sizing: border-box;
+                    height: 405px;
+                    width: 808px;"></canvas>
+                    </div>
+                </div>
+                <div class="tabcautch">
+                    <h4> Cautche </h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="font-size: 13px;">#</th>
+                                <th style="font-size: 13px;">Cautche Name</th>
+                                <th style="font-size: 13px;">Cautche E-mail</th>
+                                <th style="font-size: 13px;">Mobile</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users">
+                                <td style="text-align: center;">{{ user.id }}</td>
+                                <td><a [routerLink]="['/cautch', user.id]"
+                                        style="cursor: pointer;text-decoration: none; color: #a6b0cf;">{{ user.username
+                                        }}</a> </td>
+                                <td> {{ user.email }} </td>
+                                <td> {{user.telephone}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div *ngIf="searchResults.length > 0" class="bb2b" (click)="toggleDropdown3()">
+                    <div class="bb21">
+                        <h1>search result</h1>
+                   </div>
+                    <div style="display: flex;" *ngFor="let result of searchResults">
+
+                        <img [src]="result.image" alt="Image">
+                        <div class="evv3">
+                            <a href="" [routerLink]="['/initlest', userInfo.id, result.id]">{{ result.nom }} </a>
+                            <a href="" [routerLink]="['/inscriptioncour', userInfo.id, result.id]">{{ result.name }}</a>
+                            {{ result.username }}
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown-menu" *ngIf="showDropdown4" style="right: 275px;top: 69px;position: fixed;    width: 318px ">
+                    <!-- Contenu de votre menu déroulant -->
+                    <div class="nottit">
+                        <div style="width: 222px;">
+                            <h6> notification</h6>
+                        </div>
+                        <div style="padding: 0px 12px;width: 63px;">
+                            <a href="" class="dd">Vieux all</a>
+                        </div>
+                    </div>
+                    <div style="display: block;" *ngFor="let chop of chops">
+                        <div class="ev">
+                            <div class="im">
+                                <img [src]="chop.imageslid1" alt="Image de l'événement" class="ivim">
+                            </div>
+                            <div>
+                                <h6 class="hh6">{{ chop.name }}</h6>
+                                <a [routerLink]="['/chopdetait2', userInfo.id, chop.id]" style="text-decoration: none;">
+                                    <p class="pp">{{ chop.type }}</p>
+                                </a>
+                                <p class="pp">
+                                    {{ chop.prix }}DTN
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="foot">
+                        <a href="" style="font-size: 14px ;text-decoration: none;" class="dd"> Vieux more...</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />

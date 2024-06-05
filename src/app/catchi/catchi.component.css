@@ -1,0 +1,249 @@
+.c2 {
+    padding-top: 50px;
+    padding-left: 130px;
+    padding-right: 130px;
+    background-color: #f9f9f9;
+    height: auto;
+}
+
+.c1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #343a40;
+    margin-right: 5px;
+}
+
+.p1 {
+    color: #74788d;
+    margin-left: 5px;
+}
+
+.c3 {
+    display: flex;
+    margin-top: 20px;
+}
+
+.c4 {
+    padding: 0px 12px;
+    display: block;
+}
+
+.c5 {
+    width: 380px;
+    height: 110px;
+    background-image: url(../../assets/images/depositphotos_60600635-stock-photo-closeup-of-a-muscular-young.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.c6 {
+    border-radius: 50%;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 5px solid #eff2f7;
+    top: 65px;
+    left: 45px;
+    z-index: 1;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.c7 {
+    display: flex;
+    padding: 1.25rem 1.25rem;
+    background-color: #ffffff;
+    position: relative;
+    top: 110px;
+    padding-bottom: 10px;
+    border-radius: 14px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+h5 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #495057;
+    font-family: "Poppins", sans-serif;
+    top: 42px;
+    margin-top: 50px;
+
+}
+
+.c8 {
+    padding: 0px 24px;
+    position: relative;
+}
+
+p {
+    font-size: 13px;
+    color: #495057;
+    font-family: "Poppins", sans-serif;
+}
+
+.cc4 {
+    background-color: #ffffff;
+    padding: 1.25rem 1.25rem;
+    position: absolute;
+    top: 355px;
+    width: 340px;
+    border-radius: 14px;
+}
+
+.h44 {
+    font-size: 15px;
+    margin: 0 0 7px;
+    font-weight: 600;
+    color: #343a40;
+    font-family: "Poppins", sans-serif;
+
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #495057;
+    font-size: 1.421875rem;
+}
+
+.per {
+    font-size: 13px;
+    color: rgba(52, 195, 143);
+    opacity: 1;
+    margin: 0;
+}
+
+.fle2 {
+    padding: 0px 12px;
+}
+
+.fle3 {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.car1 {
+    display: flex;
+    flex: 1 1 auto;
+    padding: 1.25rem 1.25rem;
+    background-color: #ffffff;
+    border-radius: 14px;
+    width: 221px;
+}
+
+.fl2 {
+    overflow: hidden;
+    position: relative;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    opacity: 1;
+    background-color: rgba(85, 110, 230);
+}
+
+.fl2::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 54px;
+    background-color: #ffffff1a;
+    left: 16px;
+    transform: rotate(32deg);
+    top: -5px;
+    transition: all .4s;
+}
+
+.cc5 {
+    background-color: #ffffff;
+    padding: 1.25rem 1.25rem;
+    margin-top: 30px;
+    width: 352px;
+    border-radius: 14px;
+ 
+}
+
+ul {
+    margin: 0 10px;
+    border-left: 3px dashed #eff2f7;
+    list-style-type: none;
+    /* Supprime les puces */
+}
+
+li {
+    position: relative;
+    padding: 0 0 40px 0px;
+}
+
+.icon {
+    position: absolute;
+    left: -47px;
+    top: 2px;
+    z-index: 2;
+    font-size: 16px;
+}
+.hdes{
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 14px;
+    width: 52px;
+}
+button{
+    padding: 8px 15px;
+    color: #ffffff;
+    background-color: #556EE6;
+    border: none;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.accept{
+padding: 1.25rem 1.25rem;
+background-color: #ffffff;
+margin-top: 40px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+   
+  }
+  
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:hover {
+    background-color: #f5f5f5;
+  }

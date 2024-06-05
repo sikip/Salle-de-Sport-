@@ -1,0 +1,32 @@
+.a2{
+    background-color: #f9f9f9;
+    padding-top: 50px;
+    padding-top: 90px;
+    padding-left: 44px;
+    border-top:  1px solid #eaeaea;
+    width: 100%;
+  }
+  .a3{
+    padding: 50px;
+    border: 1px solid #eaeaea;
+  }
+  
+input{
+  border: 1px solid #eaeaea;
+  margin-top: 6px;
+  height: 30px;
+  width: 100%;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+input:focus{
+  outline: 0;
+}
+.a2{
+  background-color: #f9f9f9;
+  padding-top: 50px;
+  padding-top: 90px;
+  padding-left: 44px;
+  border-top:  1px solid #eaeaea;
+  width: 100%;
+}

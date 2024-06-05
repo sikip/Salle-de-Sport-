@@ -1,0 +1,90 @@
+.a2{
+    padding: 10px 0 30px;
+    background-color: #2a3042;  
+    width: 250px;
+    position: fixed;
+    height: 610px;
+}
+
+.sidebar-menu .list li a {
+    display: block;
+   text-decoration: none;
+    color: #545a6d;
+    position: relative;
+    font-size: 13px;
+    transition: all .4s;
+    font-family: "Poppins", sans-serif;
+    
+
+}
+
+.sidebar-menu .list li a i {
+    display: inline-block;
+    min-width: 1.75rem;
+    padding-bottom: 0.125em;
+    font-size: 1.25rem;
+    line-height: 1.40625rem;
+    vertical-align: middle;
+    color: #7f8387;
+    transition: all .4s;
+}
+.sidebar-menu ul li a:hover,.sidebar-menu ul li a:hover i {
+    color: #ffffff;
+}
+.sidebar-menu ul li a.active{
+    color: #ffffff;   
+}
+.list{
+    list-style: none;
+    padding: 0;
+}
+.title{
+    padding: 12px 20px!important;
+    letter-spacing: .05em;
+    pointer-events: none;
+    cursor: default;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #7f8387;
+    font-weight: 600;
+    margin: 0;
+    padding: .625rem 1.5rem;
+}
+li{
+    padding: .625rem 1.5rem;
+    color: #7f8387;
+    font-size: 13px;
+    transition: all .4s;
+    font-family: "Poppins", sans-serif;
+}
+.scroll-container {
+    height: 610px; /* Hauteur fixe pour le conteneur */
+    overflow-y: auto; /* Active la barre de défilement verticale si le contenu dépasse la hauteur */
+  }
+  
+  .content {
+    height: 400px;
+    width: auto;
+  
+  }
+  .scroll-container::-webkit-scrollbar {
+    width: 6px; /* Largeur de la barre de défilement */
+    height: 2px;
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Couleur de fond du bouton de défilement */
+    border-radius: 10px; /* Bordure arrondie du bouton de défilement */
+  }
+  
+  /* Firefox */
+  .scroll-container::-moz-scrollbar {
+    width: 6px; /* Largeur de la barre de défilement */
+    height: 10px;
+  }
+  
+  .scroll-container::-moz-scrollbar-thumb {
+    background-color: #888; /* Couleur de fond du bouton de défilement */
+    border-radius: 10px; /* Bordure arrondie du bouton de défilement */
+  }
+  

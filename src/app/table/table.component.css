@@ -1,0 +1,156 @@
+.t1{
+    background-color: black;
+    margin: 0;
+}
+.t2{
+    text-align: center;
+}
+h1{
+    color: aliceblue;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 0.05em;
+    font-family: epilog, sans-serif; 
+}
+p{
+    text-align: center;
+    font-size: 15px;
+    color: aliceblue;
+    line-height: 1.52em;
+    font-family: epilog2, sans-serif; 
+}
+.c1{
+    width: 370px;
+    height: 422px;
+    padding: 15px;
+    margin-right: 5px;
+}
+.c2{
+   
+    background-color: aliceblue;
+    padding: 19px 34px 12px;
+    height: 23px;
+}
+.p2{
+    color: #060606;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: epilog, sans-serif; 
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+.c3{
+    height: 51px;
+    background-color: #FFC702;
+    padding: 47px 35px 40px;
+}
+.p3{
+    text-align: center;
+    font-size: 40px;
+    font-family: epilog, sans-serif; 
+    color: #060606;
+    margin: 0;
+}
+
+.span{
+    margin-left: 2px;
+    font-size: 17px;
+    color: #060606;
+    font-family: epilog2, sans-serif;
+}
+.c4{
+    background-color: #6666663b;
+    padding: 30px 30px;
+
+}
+.p4{
+    text-align: left;
+    font-weight: 500;
+    font-size: 15px;
+    color: #ffffff;
+}
+span{
+    font-size: 20px;
+    color: #ffffff;
+}
+.c5{
+    padding: 0px 9px ;
+    margin-top: 40px;
+}
+
+
+.b{
+    background-color: #060606;
+      color: #FFFFFF;
+      font-family: 'Fivo Sans', sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      line-height: 50px;
+      padding: 0px 35px;
+      width: 287px;
+      height: 50px;
+  }
+  
+  .b:hover {
+      background-color: #FFC702;
+      color: #060606;
+  }
+  .cart{
+    padding-left: 140px;
+    display: flex;
+    margin-top: 50px;
+    height: 701px;
+    
+  }
+hr{
+    margin-top: 40px;
+    text-align: center;
+    width: 200px;
+}
+img{
+    margin-top: -3.1px;
+    margin-right: 267px;
+    height: 28px;
+}
+.offre-chere {
+    text-decoration: line-through;
+    text-decoration-color: white;
+  }
+.ligne{
+    display: inline-flex;
+    width: 284px;
+    height: 1px;
+    background-color: #d8d8d8;
+    position: relative;
+} 
+.ligne2{
+    display: inline-flex;
+    width: 284px;
+    height: 1px;
+    background-color: #d8d8d8;
+    position: relative;
+}
+.ligne:before{
+    left: 50%;
+    transform: translateX(-50%) skewX(-45deg);
+    content: "";
+    display: block;
+    width: 112px;
+    height: 4px;
+    position: absolute;
+    left: 139px ;
+    top: -2px;
+    background-color: #FFC702;
+}
+
+
+

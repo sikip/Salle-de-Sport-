@@ -1,0 +1,117 @@
+.h1{
+    padding-left: 134px;
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+.h2{
+    display: flex;
+}
+.h3{
+    width: 595px;
+    height: 344px;
+}
+.h4{
+    height: 525px;
+    height: 344px;
+    margin: 0px 70px 0px 0px;
+    padding: 10px;
+}
+span{
+    color: #ffffff;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: epilog, sans-serif;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 0.05em;
+}
+.b3{
+  margin-right: 7px;
+  height: auto;
+  background-color: #ffffff;
+  color: black ;
+  font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0 35px;
+    line-height: 50px;
+    transition: all 300ms ease 0ms;
+    border-radius: 0;
+    position: relative;
+    z-index: 1;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+}
+.b3::before{
+  content: '';
+    position: absolute;
+    width: 207px;
+    height: 100%;
+    background-color: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+.b3::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 1px solid #fff;
+  top: 0;
+  left: 0;
+  transform: translate(7px, 7px);
+  transition: all 230ms ease 0ms;
+}
+.b3:hover:after{
+  transform: translate(4px, 4px);
+}
+  .h33{
+    width: 595px;
+    height: 344px;
+    padding: 10px;
+  }
+  p{
+    color: #bcbcbc;
+    font-size: 15px;
+    font-family:epilog2 ,sans-serif;
+    margin: 0px 0px 17px;
+    line-height: 1.68;
+    letter-spacing: 0.01em;
+  }
+  .number{
+    display: flex;
+  }
+  .number1{
+   width: 162px;
+    height: 89px;
+    margin: 0px 90px 0px 0px;
+  }
+
+  .counting-number{
+    color: #FFC702;
+    font-size: 50px;
+    font-family: epilog,sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+  h4{
+    margin-top: 8px;
+    margin-bottom: 0;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }

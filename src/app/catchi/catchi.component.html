@@ -1,0 +1,220 @@
+<div class="c2" *ngIf="User">
+    <div class="c1">
+        <h4>Cautche</h4>
+        <div style="display: flex;"><a href="">Dashboards</a> / <p class="p1">{{ User.username }}</p>
+        </div>
+    </div>
+    <div class="c3">
+        <div class="c4">
+            <div class="c5">
+                <div class="c6">
+                    <img [src]="User.image" alt="">
+                </div>
+                <div class="c7">
+                    <div class="c8" style="padding: 0;">
+                        <h5>{{ User.username }}</h5>
+                    </div>
+                    <div class="c8">
+                        <h5 style="margin-top: 0;margin-bottom: 0;">{{totalEventsByUser}}</h5>
+                        <p>eventes</p>
+                    </div>
+                    <div class="c8">
+                        <h5 style="margin-top: 0;margin-bottom: 0; width: 66px;">{{revenue}} DT</h5>
+                        <p>Revenue</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cc4">
+                <div style="display: flex;">
+                    <div>
+                        <h4 class="hh4">Monthly Earning</h4>
+                        <p>This month</p>
+                        <h3>{{remoi2}}DT</h3>
+
+                        <div style="display: flex;">
+                            <p class="per"> {{ remoiper }}%</p>
+                            <p class="per">
+                                <span *ngIf="revenueChange === 'Augmentation'">
+                                    <span class="material-symbols-outlined" style="font-size: 18px;margin-right: 8px;">
+                                        arrow_upward
+                                    </span>
+                                </span>
+                                <span *ngIf="revenueChange !== 'Augmentation'">
+                                    <span class="material-symbols-outlined" style="font-size: 18px;margin-right: 8px;">
+                                        arrow_downward
+                                    </span>
+                                </span>
+                        </div>
+                        <span style="color:#74788d;opacity: 1;"> From previous period</span>
+                    </div>
+                    <div>
+                        <canvas id="myChart" width="400" height="400" style="    height: 146px;"></canvas>
+                    </div>
+                </div>
+                <p style="margin-top: 38px;">Guide your clients to success with our simplified coaching dashboard.</p>
+            </div>
+        </div>
+        <div class="fle2">
+            <div class="fle3">
+                <div class="car1" style="margin-right: 12px;">
+                    <div style="    width: 150px;">
+                        <p style="font-size: 16px ;margin-bottom: 16px; opacity: 1;">Eventes total</p>
+                        <h4 style="margin: 0;font-weight: 500; line-height: 1.2;">{{remoi3}}</h4>
+                    </div>
+                    <div class="fl2" style="align-self: center;text-align: center;">
+                        <span class="material-symbols-outlined" style="margin-top: 12px;color: aliceblue;">
+                            event
+                        </span>
+                    </div>
+                </div>
+                <div class="car1" style="margin: 0px 12px;">
+                    <div style="    width: 150px;">
+                        <p style="font-size: 16px ;margin-bottom: 16px; opacity: 1;">Revenue</p>
+                        <h4 style="margin: 0;font-weight: 500; line-height: 1.2;">{{remoi2}} DT</h4>
+                    </div>
+                    <div class="fl2" style="align-self: center;text-align: center;">
+                        <span class="material-symbols-outlined" style="margin-top: 12px;color: aliceblue;">
+                            system_update_alt
+                        </span>
+                    </div>
+                </div>
+                <div class="car1" style="margin: 0px 12px;">
+                    <div style="    width: 150px;">
+                        <p style="font-size: 16px ;margin-bottom: 16px; opacity: 1;">trainees</p>
+                        <h4 style="margin: 0;font-weight: 500; line-height: 1.2;">{{client}}</h4>
+                    </div>
+                    <div class="fl2" style="align-self: center;text-align: center;">
+                        <span class="material-symbols-outlined" style="margin-top: 12px;color: aliceblue;">
+                            exercise
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <canvas id="barChart" width="695" height="340"></canvas>
+            </div>
+        </div>
+
+
+    </div>
+    <div style="display: flex;">
+        <div class="cc5" style="height: 400px;">
+            <h4 style="font-size: 15px;margin: 0 0 24px;font-weight: 600;">Social Source</h4>
+            <div
+                style="margin: 0px 151px 24px;height: 3rem;width: 3rem; background-color :rgba(85, 110, 230, .25);border-radius: 50%;">
+                <div
+                    style="align-items: center;color:#fff;display: flex;font-weight: 500;height: 100%;justify-content: center;width: 100%;">
+                    <i class="fa-brands fa-facebook" style="color: blue;font-size: 22px;"></i>
+                </div>
+            </div>
+            <div>
+                <p style="font-size: 16px;text-align: center;">Facebook</p>
+                <p style="text-align: center;margin: 0;">Join us on Facebook and discover how our interactive coaching
+                    dashboard can boost your sports coaching business!</p>
+            </div>
+            <div style="display: flex;margin-top: 1.5rem;">
+                <div style="padding: 0 12px;margin: 16px 0px 0px;margin-right: 15px;">
+                    <div
+                        style="height: 40px;width: 40px;border-radius: 50px;background-color:rgba(85, 110, 230) ;align-items: center;    
+                    color: #fff;display: flex;font-weight: 500;justify-content: center;    margin-left: 20px;margin-bottom: 1rem ;">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <h4 class="hh4">facebook</h4>
+                </div>
+                <div style="padding: 0 12px;margin: 16px 0px 0px;    margin-right: 15px;">
+                    <div
+                        style="height: 40px;width: 40px;border-radius: 50px;background-color:#50A5F1;align-items: center;    
+                    color: #fff;display: flex;font-weight: 500;justify-content: center;margin-left: 13px;margin-bottom: 1rem ;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </div>
+                    <h4 class="hh4">Twitter</h4>
+                </div>
+                <div style="padding: 0 12px;margin: 16px 0px 0px;">
+                    <div
+                        style="height: 40px;width: 40px;border-radius: 50px;background-color:#E83E8C;align-items: center;    
+                    color: #fff;display: flex;font-weight: 500;justify-content: center;    margin-left: 25px;margin-bottom: 1rem ;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <h4 class="hh4">Instagram</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="cc5" style="margin-left: 30px;">
+
+            <div *ngIf="events.length > 0">
+                <h4 style="font-size: 15px;margin: 0 0 24px;font-weight: 600;margin-bottom: 3rem;">Activity </h4>
+                <ul>
+                    <li *ngFor="let event of events">
+                        <div class="icon">
+                            <i class="fa-regular fa-circle-up fa-rotate-90"
+                                style="font-size: 18px;    font-weight: 400;font-style: normal;font-variant: normal;line-height: 1;"></i>
+                        </div>
+                        <div style="display: flex;">
+                            <div style="display: flex;">
+                                <div style="margin-right: 1rem;">
+                                    <h5 class="hdes"> {{ event[1] }}</h5>
+                                </div>
+                                <i class="fa-solid fa-arrow-right"
+                                    style="margin-top: 6px;font-size: 13px;color: rgba( 85, 110, 230);opacity: 1;"></i>
+                            </div>
+                            <p style="margin-left: 1rem;">{{ event[0] }}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="bot" style="text-align: center;margin-top: 45px;">
+                <button [routerLink]="['/CautchevenmentComponent', User.id]">View More 
+                    <i class="fa-solid fa-arrow-right" style="font-size: 10px;margin-left: 6px;"></i>
+                </button>
+
+            </div>
+        </div>
+        <div class="cc5" style="    margin-left: 30px;">
+            <div >
+                <h4>Top Three Events by Likes</h4>
+                <ul style="border: none;">
+                  <li *ngFor="let event of eventsWithLikes">
+                    <div>
+                        <a [routerLink]="['/eventid', event[0].id]"><h3>{{ event[0].nom }}</h3></a>
+
+                      <p>Likes:{{ event[1] }}</p>
+                      <!-- Affichez d'autres détails de l'événement si nécessaire -->
+                    </div>
+                  </li>
+                </ul>
+              </div>
+        </div>
+    </div>
+    <div *ngIf="clientAccepts" class="accept">
+        <h4 style="margin-bottom: 20px;">Cautche client</h4>
+        <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>date</th>
+                <th>email</th>
+                <th>aceptaion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let clientAccept of clientAccepts">
+                <td>{{ clientAccept.id }}</td>
+                <td>{{ clientAccept.name }}</td>
+                <td>{{ clientAccept.addedDate }}</td>
+                <td>{{ clientAccept.mail }}</td>
+                <td>{{ clientAccept.acceptation ? clientAccept.acceptation : '-' }}</td>
+              
+              </tr>
+            </tbody>
+          </table>
+      </div>
+</div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />

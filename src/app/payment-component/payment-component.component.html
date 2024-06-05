@@ -1,0 +1,52 @@
+
+  <div class="ff1">
+    <div class="f1">
+        <div class="f2" *ngFor="let salle of displayedSalle">
+            <div class="f3">
+                <div class="f4">
+                    <div class="f5" >
+                        <h1>welcom to {{salle.name}}</h1>
+                        <p>Log in to our members area to access your personalized training schedule and track your
+                            progress. If you don't have an account yet, sign up now to join our vibrant sports
+                            community. We are here to help you achieve your fitness goals.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ff2">
+              <div class="ff3">
+                  <h2>{{salle.name}}</h2>
+                  <h3 class="hh3">Sign Into Your Account</h3>
+                  <div class="button">
+                    <a href="" class="facbook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="" class="twiter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="" class="google"><i class="fa-brands fa-google"></i></a>
+                    <a href="" class="linkidin"><i class="fa-brands fa-linkedin-in"></i></a>
+                  </div>
+                  <div class="ff4">
+                         <span>Or</span>
+                  </div>
+           
+              </div>
+              <div style="position: relative;    top: 44px;">
+                <label for="amount">Payment amount:</label><br>
+                <input type="number" id="amount" name="amount" [(ngModel)]="displayedSalle[0].prix" readonly>
+
+                <button (click)="generatePayment()">Générer le paiement</button>
+              </div>
+
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+              <link rel="preconnect" href="https://fonts.googleapis.com">
+              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+              <link
+                  href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+                  rel="stylesheet">
+            </div>
+        </div>
+        </div>
+
+</div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">

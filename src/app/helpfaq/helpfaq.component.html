@@ -1,0 +1,191 @@
+<app-bar3></app-bar3>
+<app-bar2></app-bar2>
+<div *ngFor="let salle of displayedSalle">
+    <div class="homepage">
+        <div class="homepage2">
+            <div class="homepage3">
+                <div>
+                    <h1>FAQS</h1>
+                    <p>Discover all the features in {{salle.name}}, designed to make it easier to book classes, track
+                        your progress and much more</p>
+                </div>
+                <div class="homemain">
+                    <div class="homemain2">
+                        <span><a href="/bar">HOME MAIN </a> > HELP & FAQS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <div class="page">
+        <div class="page1">
+            <div class="page2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 512 512">
+                    <g>
+                        <path
+                            d="M496,128H296V64a8,8,0,0,0-8-8H16a8,8,0,0,0-8,8V304a8,8,0,0,0,8,8H40v56a8,8,0,0,0,13.66,5.66L115.31,312H216v64a8,8,0,0,0,8,8H396.69l61.65,61.66A8,8,0,0,0,472,440V384h24a8,8,0,0,0,8-8V136A8,8,0,0,0,496,128ZM112,296a8.008,8.008,0,0,0-5.66,2.34L56,348.69V304a8,8,0,0,0-8-8H24V72H280V296Zm376,72H464a8,8,0,0,0-8,8v44.69l-50.34-50.35A8.008,8.008,0,0,0,400,368H232V312h56a8,8,0,0,0,8-8V144H488Z">
+                        </path>
+                        <path
+                            d="M341.31,311.534a8,8,0,0,0,10.224-4.843L363.924,272h40.152l12.39,34.691a8,8,0,0,0,15.068-5.382l-40-112a8,8,0,0,0-15.068,0l-40,112A8,8,0,0,0,341.31,311.534ZM384,215.786,398.362,256H369.638Z">
+                        </path>
+                        <path
+                            d="M194.19,214.876A47.708,47.708,0,0,0,200,192V160a48,48,0,0,0-96,0v32a47.976,47.976,0,0,0,80.228,35.542l10.115,10.115a8,8,0,0,0,11.314-11.314ZM152,224a32.036,32.036,0,0,1-32-32V160a32,32,0,0,1,64,0v32a31.848,31.848,0,0,1-1.882,10.8l-8.461-8.461a8,8,0,0,0-11.314,11.314l10.55,10.55A31.852,31.852,0,0,1,152,224Z">
+                        </path>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="page3">
+                <h3>GENERAL QUESTION</h3>
+            </div>
+        </div>
+    </div>
+    <div class="page11">
+        <div style="display: block;">
+            <div style="display: block;">
+                <div class="question" (click)="toggleAnswer()" [ngClass]="{'active': showAnswer}">
+                    DO I NEED TO BOOK A SLOT FOR THE GYM? (COVID-19 RELATED)
+                </div>
+                <div class="answer" [ngClass]="{'show-answer': showAnswer, 'slide-in': showAnswer}">
+                    Yes, due to COVID-19 restrictions, it is necessary to book a time slot to access the gym. This
+                    allows us to manage the number of people present at one time and maintain a safe environment for all
+                    our members.
+                </div>
+            </div>
+            <div style="display: block;">
+                <div class="question" (click)="toggleAnswer2()" [ngClass]="{'active': showAnswer2}">
+                    CAN I CANCEL THE GYM TIME SLOT I HAVE BOOKED?
+                </div>
+                <div class="answer" [ngClass]="{'show-answer': showAnswer2, 'slide-in': showAnswer2}">
+                    You can cancel the gym time slot you booked. However, cancellation policies may vary depending on
+                    the gym and specific circumstances. </div>
+            </div>
+            <div style="display: block;">
+                <div class="question" (click)="toggleAnswer3()" [ngClass]="{'active': showAnswer3}">
+                    I HAVE A HEALTH ISSUE, CAN I STILL EXERCISE?
+                </div>
+                <div class="answer" [ngClass]="{'show-answer': showAnswer3, 'slide-in': showAnswer3}">
+                    Before beginning any exercise program, especially if you have pre-existing health conditions,
+                    consult a healthcare professional for personalized advice. They will be able to recommend exercises
+                    tailored to your specific condition and help you avoid any potential risks. </div>
+            </div>
+            <div style="display: block;">
+                <div class="question" (click)="toggleAnswer4()" [ngClass]="{'active': showAnswer4}">
+                    IS PERSONAL TRAINING AVAILABLE AT {{salle.name}}?
+                </div>
+                <div class="answer" [ngClass]="{'show-answer': showAnswer4, 'slide-in': showAnswer4}">
+                    Yes, personal training is available at {{salle.name}}.
+                </div>
+            </div>
+            <div style="display: block;">
+                <div class="question" (click)="toggleAnswer5()" [ngClass]="{'active': showAnswer5}">
+                    HOW WILL I GET FITTER WITH {{salle.name}}? 
+                </div>
+                <div class="answer" [ngClass]="{'show-answer': showAnswer5, 'slide-in': showAnswer5}">
+                    At {{salle.name}}, you can get in shape with a combination of personalized training programs,
+                    motivating group workouts and nutrition advice. Our dedicated team of health professionals and
+                    personal trainers will help you achieve your fitness goals effectively and sustainably.
+                </div>
+            </div>
+            <div style="display: block;">
+                <div class="question" (click)="toggleAnswer6()" [ngClass]="{'active': showAnswer6}">
+                    IS THE WOD ENOUGH? SHOULD I DO MORE?
+                </div>
+                <div class="answer" [ngClass]="{'show-answer': showAnswer6, 'slide-in': showAnswer6}">
+
+                    Whether the WOD is sufficient depends on your goals and fitness level. Assessing progress, listening
+                    to your body, and adjusting your routine as needed are crucial for determining if additional
+                    exercises or modifications are necessary.
+                </div>
+            </div>
+            <div style="display: block;">
+                <div class="question" (click)="toggleAnswer7()" [ngClass]="{'active': showAnswer7}">
+                    HOW DO I BECOME A CROSSFIT AFFILIATE?
+                </div>
+                <div class="answer" [ngClass]="{'show-answer': showAnswer7, 'slide-in': showAnswer7}">
+                    To become a CrossFit affiliate, complete the Level 1 Trainer Course, then apply through the CrossFit
+                    website. Upon approval, you'll gain access to resources and support while upholding CrossFit's
+                    standards and affiliate agreement.
+                </div>
+            </div>
+            <div class="qestionex">
+                <div class="page1" style="margin-left: 0;">
+                    <div class="page2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40" height="40"><path d="M472,224V152a31.978,31.978,0,0,0-48.2-27.577A32,32,0,0,0,360,128v96H152V128a32,32,0,0,0-63.795-3.577A31.978,31.978,0,0,0,40,152v72a32,32,0,0,0,0,64v72a31.978,31.978,0,0,0,48.205,27.577A32,32,0,0,0,152,384V288H360v96a32,32,0,0,0,63.8,3.577A31.978,31.978,0,0,0,472,360V288a32,32,0,0,0,0-64ZM40,272a16,16,0,0,1,0-32ZM72,376a16.019,16.019,0,0,1-16-16V152a16,16,0,0,1,32,0V360A16.019,16.019,0,0,1,72,376Zm64,8a16,16,0,0,1-32,0V128a16,16,0,0,1,32,0Zm16-112V240H360v32ZM408,384a16,16,0,0,1-32,0V128a16,16,0,0,1,32,0Zm48-24a16,16,0,0,1-32,0V152a16,16,0,0,1,32,0Zm16-88V240a16,16,0,0,1,0,32Z"></path></svg>
+                    </div>
+        
+                    <div class="page3">
+                        <h3>QUESTIONS ABOUT EXERCISE</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="page11" style="margin: 0;display: block;">
+                <div style="display: block;">
+                    <div class="question" (click)="toggleAnswer8()" [ngClass]="{'active': showAnswer8}">
+                        IS PERSONAL TRAINING AVAILABLE AT {{salle.name}}?
+                    </div>
+                    <div class="answer" [ngClass]="{'show-answer': showAnswer8, 'slide-in': showAnswer8}">
+                       
+                       Yes, personal training is available at{{salle.name}}.
+                     </div>
+                </div>
+                <div style="display: block;">
+                    <div class="question" (click)="toggleAnswer9()" [ngClass]="{'active': showAnswer9}">
+                        HOW WILL I GET FITTER WITH {{salle.name}}?
+                    </div>
+                    <div class="answer" [ngClass]="{'show-answer': showAnswer9, 'slide-in': showAnswer9}">
+                       
+                        At {{salle.name}}, you'll get fitter through personalized training programs, motivating group workouts, and nutritional guidance. Our dedicated team of health professionals and personal trainers will help you achieve your fitness goals effectively and sustainably.
+                     </div>
+                </div>
+                <div style="display: block;">
+                    <div class="question" (click)="toggleAnswer10()" [ngClass]="{'active': showAnswer10}">
+                        IS THE WOD ENOUGH? SHOULD I DO MORE?
+                    </div>
+                    <div class="answer" [ngClass]="{'show-answer': showAnswer10, 'slide-in': showAnswer10}">       
+                        The adequacy of the WOD depends on your fitness goals and individual needs. Assessing progress and consulting a fitness professional can help determine if additional training is necessary.                     </div>
+                </div>
+                <div style="display: block; margin-bottom: 100px;">
+                    <div class="question" (click)="toggleAnswer11()" [ngClass]="{'active': showAnswer11}">
+                        HOW DO I BECOME A CROSSFIT AFFILIATE?
+                    </div>
+                    <div class="answer" [ngClass]="{'show-answer': showAnswer11, 'slide-in': showAnswer11}">       
+                        To become a CrossFit affiliate, complete the Level 1 Trainer Course and apply through the CrossFit website. Upon approval, you'll gain access to resources and support while adhering to CrossFit's affiliate agreement.                </div>
+            </div>
+            
+        </div>
+      
+          
+
+    </div>
+    <div>
+      <div class="tete">
+       <h3>Can't Find Answer? Ask Us</h3>
+      </div>
+      <div class="boddy">
+        <p>If you have any questions please contact us we will answer your questions via email as quickly as possible.</p>
+        <form (submit)="sendEmail()">
+            <input type="text" id="name" name="name" placeholder="Your Name" [(ngModel)]="emailData.name" required>
+            <input type="email" id="email" name="email" [(ngModel)]="emailData.email" placeholder="Your Email" required >
+            <textarea id="message" name="message" [(ngModel)]="emailData.message" placeholder="Your Message" required></textarea>
+            <div class="check">
+            <input type="checkbox" name="" id="">
+            <p style="margin-top: 39px;margin-left: 9px;">I agree that {{salle.name}} will collect my name and email information</p>
+            </div>
+            <button type="submit">SEND QUESTIONS</button>
+        </form>
+
+      </div>
+      </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    </div>
+</div>
+<app-footer></app-footer>

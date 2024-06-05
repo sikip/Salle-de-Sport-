@@ -1,0 +1,26 @@
+<!-- map.component.html -->
+
+<div class="mp">
+    <div *ngFor="let salle of displayedSalle" style="padding: 0;margin: 0;">
+        <h3>{{ salle.name }}</h3>
+        <iframe [src]="getMapUrl(salle)" width="1500" height="600" style="border: 0; margin: 0; padding: 0; position: absolute;top: 6437px;background-color: black; opacity: .9;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+        <div class="ii aos-init" data-aos="slide-right" data-aos-duration="800" data-aos-easing="ease-in-out" data-aos-delay="100" >
+            <p> Our Locations</p>
+            <h3>{{salle.localaisation}}</h3>
+            <p class="p2" style=" margin-bottom: 17px;">
+               {{salle.locationexact}}
+            </p>
+            <p class="p2" >
+               Email:&nbsp;&nbsp;{{salle.email}}
+            </p>
+            <p class="p2" >
+                Phone:&nbsp;&nbsp;<span>{{salle.numero}} </span>
+             </p>
+             <p class="p2" >
+               {{salle.time}} 
+             </p>
+        </div>
+      </div>
+      
+</div>

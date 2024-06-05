@@ -1,0 +1,75 @@
+<div class="t1">
+ <div class="t2">
+   <h1>PRICING TABLE</h1>
+   <p>This also meant we needed to provide a learning environment run by experienced and successful coaches. However, our most <br>
+    important goal was to create a welcoming atmosphere.</p>
+     <span class="ligne"><span class="ligne2"></span></span>
+<div class="cart">
+  <div *ngFor="let offre of displayedOffre" class="c1" data-aos="fade-up" >
+    <div class="c2">
+     <p class="p2">  {{offre.nom}}</p>
+    
+   </div>
+   <div class="c3">
+    <p class="p3">{{offre.prix}} <span class="span" style="color: black;"> /per month</span></p>
+    <div> <img src="../../assets/images/triangle.png" alt=""></div>
+    
+   </div>
+   <div class="c4" >
+    <div style="display: flex;margin-bottom: 12px;"> <span class="material-symbols-outlined">done</span> &nbsp;<p class="p4">Unlimited  <span class="span" style="color: #bcbcbc; font-size: 15px;"> access to the gym</span></p></div>
+   <div style="display: flex;margin-bottom: 12px;"> <span class="material-symbols-outlined">done</span> &nbsp;<p class="p4">{{offre.classe}} classes <span class="span" style="color: #bcbcbc; font-size: 15px;">per week</span></p></div>
+   <div style="display: flex;margin-bottom: 12px;"> <span class="material-symbols-outlined">done</span> &nbsp;<p class="p4">{{offre.month}} Month  <span class="span" style="color: #bcbcbc; font-size: 15px;">memberships</span></p></div>
+   <div style="display: flex;margin-bottom: 12px;"> <span class="material-symbols-outlined">done</span> &nbsp;<p class="p4">FREE  <span class="span" style="color: #bcbcbc; font-size: 15px;">drinking package</span></p></div>
+
+
+
+
+
+   <div [ngClass]="{'offre-chere': offre.prix < 1200}">
+    <ng-container *ngIf="offre.prix < 1200; else otherContent">
+      <div style="display: flex;margin-bottom: 12px;"> 
+        <span>x</span> 
+        &nbsp;
+        <p class="p4">{{offre.message}} sessions  <span class="span" style="color: #bcbcbc; font-size: 15px;">Free Massage</span></p>
+      </div>
+    </ng-container>
+    <ng-template #otherContent>
+      <div style="display: flex;margin-bottom: 12px;"> 
+       <span class="material-symbols-outlined">done</span>
+        &nbsp;
+        <p class="p4">{{offre.message}} sessions  <span class="span" style="color: #bcbcbc; font-size: 15px;">Free Massage</span></p>
+      </div>
+    </ng-template>
+  </div>
+  
+  <div [ngClass]="{'offre-chere': offre.prix < 1200}">
+    <ng-container *ngIf="offre.prix < 1200; else otherContent">
+      <div style="display: flex;margin-bottom: 12px;"> 
+        <span>x</span> 
+        &nbsp;
+        <p class="p4">{{offre.entrepr}} Month   <span class="span" style="color: #bcbcbc; font-size: 15px;">Free personal training</span></p>
+      </div>
+    </ng-container>
+    <ng-template #otherContent>
+      <div style="display: flex;margin-bottom: 12px;"> 
+       <span class="material-symbols-outlined">done</span>
+        &nbsp;
+        <p class="p4">{{offre.entrepr}} Month   <span class="span" style="color: #bcbcbc; font-size: 15px;">Free personal training</span></p>
+      </div>
+    </ng-template>
+  </div>
+
+
+
+
+
+   <div class="c5">
+     <button class="b" [routerLink]="['/tform4',offre.id]">Get started</button>
+ </div>
+ 
+</div>
+ </div>
+</div>
+ </div>
+</div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />

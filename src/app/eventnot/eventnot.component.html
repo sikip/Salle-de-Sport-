@@ -1,0 +1,82 @@
+<div class="admin1">
+    <app-barad></app-barad>
+    <div class="a2">
+        <div class="a3">
+            <h2>
+                all events not accepted
+            </h2>
+        </div>
+        <div style="display: flex;">
+            <div class="add">
+                <div class="add1">
+                    <i class="fa-solid fa-calendar-days" style="color: #1947e2;font-size: 30px;margin-top: 18px;"></i>
+                </div>
+                <div class="add2" style="color: #1a3760;">
+                    {{ currentNumber3 }}
+                    <p class="p">events</p>
+                </div>
+            </div>
+            <div class="add">
+                <div class="add1" style="background-color: rgba(245,195,75,.15);">
+                    <i class="fa-solid fa-calendar-check"
+                        style="font-size: 30px;color: #ffc107;margin-top: 18px;margin-left: 2px;"></i>
+                </div>
+
+                <div class="add2">
+                    {{ currentNumber1 }}
+                    <p class="p">events accepted</p>
+                </div>
+
+            </div>
+            <div class="add">
+                <div class="add1" style="background-color: rgba(26,55,96,.1);;">
+                    <i class="fa-solid fa-calendar-xmark" style="font-size: 30px;color:#1a3760;margin-top: 18px; "></i>
+                </div>
+                <div class="add2" style="color: #1a3760;">
+                    {{ currentNumber4 }}
+                    <p class="p">event not accepted</p>
+                </div>
+            </div>
+
+        </div>
+        <table *ngIf="eventtes && eventtes.length > 0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>name event</th>
+                    <th>Date</th>
+                    <th>cautch</th>
+                    <th>acceptation</th>
+                    <th>event revenu</th>
+                    <th>salaire cautch</th>
+                    <th>vieux</th>
+                    <th>acceptation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let event of eventtes">
+                    <td>{{ event.id }}</td>
+                    <td> {{event.nom}}</td>
+                    <td>{{ event.addedDate }}</td>
+                    <td>{{ event.user.username }}</td>
+                    <td>{{ event.acceptation}}</td>
+                    <td> {{event.salairecautch}}</td>
+                    <td> {{event.salaire}}</td>
+
+                    <td> <button [routerLink]="['/eventid',event.id]">vieux </button> </td>
+                    <td><button  [routerLink]="['/updev',event.id]" style="background-color: black;color: #ffffff;">acceptation</button></td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf="eventtes && eventtes.length === 0">
+            <p>Aucun événement disponible pour le moment.</p>
+        </div>
+
+        <div *ngIf="!eventtes">
+            <p>Chargement en cours...</p>
+        </div>
+
+    </div>
+</div>

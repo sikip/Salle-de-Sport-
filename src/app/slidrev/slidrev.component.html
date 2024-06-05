@@ -1,0 +1,85 @@
+<div style="display: flex;">
+  <app-barad></app-barad>
+  <div class="a2">
+    <h1>Add Salle</h1>
+     <div class="a3">
+      <form (ngSubmit)="onSubmit()">
+      <div class="in" style="display: block;">
+  <label for="nomSalle">Salle Name:</label><br>
+  <input type="text" id="nomSalle" [(ngModel)]="salle.name" name="name" placeholder="nomSalle">
+  
+      </div>
+      <div class="in" style="display: block;">
+        <label for="priceSalle">Salle price:</label><br>
+        <input type="number" id="priceSalle" [(ngModel)]="salle.prix" name="priceSalle" placeholder="price">
+            </div>
+
+
+      <div class="in" style="display: block;">
+        <label for="EmailSalle" style="margin-top: 20px;">Salle E-mail:</label><br>
+        <input  type="text" id="EmailSalle" [(ngModel)]="salle.email" name="email" placeholder="EmailSalle">
+        </div>
+        <div class="in" style="display: block;">
+          <label for="NumeroSalle" style="margin-top: 20px;">Salle phone:</label><br>
+          <input  type="text" id="NumeroSalle"  [(ngModel)]="salle.numero" name="phone" placeholder="Sallephone">
+          </div>
+         <div class="in"style="display: flex;">
+             <div style=" margin-right: 43px; width: 500px;" >
+              <label for="slogon1" style="margin-top: 20px;">Salle slogon1:</label><br>
+            <input  type="text" id="slogon1" [(ngModel)]="salle.slogon1" name="slogon1"placeholder="slogon1">
+             </div> 
+             <div style="width: 500px;">
+              <label for="slogon2" style="margin-top: 20px;">Salle slogon2:</label><br>
+            <input  type="text" id="slogon2" [(ngModel)]="salle.slogon2" name="slogon2"placeholder="slogon2">
+             </div> 
+         </div>
+           <div class="in">
+            <label for="time" style="margin-top: 20px;">time pf your work:</label><br>
+            <input type="text" id="time" [(ngModel)]="salle.time" name="time pf your work:">
+              </div>         
+              <div class="in"style="display: flex;">
+                <div style=" margin-right: 43px; width: 500px;" >
+                 <label for="localaisation" style="margin-top: 20px;">Salle location:</label><br>
+               <input type="text" id="localaisation" [(ngModel)]="salle.localisation" name="localaisation" placeholder="localaisation">
+                </div> 
+                <div style="width: 500px;">
+                 <label for="locationexact" style="margin-top: 20px;">Salle location exact:</label><br>
+               <input type="text" id="locationexact" [(ngModel)]="salle.locationexact" name="locationexact" placeholder="locationexact">
+                </div> 
+                
+            </div>
+                  <div class="in"style="display: flex;">
+                    <div style=" margin-right: 43px; width: 500px;" >
+                     <label for="longitude" style="margin-top: 20px;">longitude</label><br>
+                   <input type="text" id="longitude" [(ngModel)]="salle.longitude" name="longitude" placeholder="longitude">
+                    </div> 
+                    <div style="width: 500px;">
+                     <label for="latitude" style="margin-top: 20px;">latitude</label><br>
+                   <input type="text" id="latitude" [(ngModel)]="salle.latitude" name="latitude" placeholder="latitude">
+                    </div> 
+                    
+                </div>
+             <div class="in" style="display: flex;">
+            <div style="margin-right: 43px;">
+              
+              <label for="file">logo Photo:</label>
+                   <input type="file" id="file"  (change)="onFileChange($event, 'image')">         
+            </div>
+            <div>
+              <label for="imageSlide1">covert Photo:</label>
+              <input type="file" id="imageSlide1" (change)="onFileChange($event, 'imageslid1')" name="imageslid1">
+            </div>
+             </div>
+             <button  type="submit" class="b1">Ajouter Salle</button>
+      </form>
+     </div>
+     <div class="a2"style=" padding-left: 10px;width: 1135px;">
+      <h1>your salles</h1>
+      <div class="a3">
+       <app-admin2></app-admin2>
+      </div>
+     </div>
+    </div>
+</div>
+
+  

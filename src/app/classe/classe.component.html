@@ -1,0 +1,253 @@
+<div class="user">
+  <div class="togelbar">
+    <div class="toglebarcontainer">
+      <div class="toglebarcontainer2" *ngFor="let salle of displayedSalle">
+        <img [src]="salle.image" alt="{{ salle.name }}" class="img1">
+      </div>
+
+      <button class="bb2" (click)="toggleDropdown4()" style="position: relative;">
+        <span class="bb2s">{{ countchop }} </span>
+
+        <div class="ii" style="position: relative;top: 7px;">
+            <i class='bx bx-cart-download' style="font-size: 22px;animation: none;"></i>
+
+        </div>
+    </button>
+        <button class="bb2" (click)="toggleDropdown2()" style="position: relative;">
+          <span class="bb2s"> {{ countAcceptedEvents }}</span>
+          <div class="ii">
+            <i class='bx bx-bell' style="font-size: 22px;"></i>
+          </div>
+        </button>
+        
+        <div class="dropdown-menu" *ngIf="showDropdown2" style="right: 228px;    width: 318px ">
+          <!-- Contenu de votre menu déroulant -->
+          <div class="nottit">
+            <div style="width: 222px;">
+              <h6> notification</h6>
+            </div>
+            <div style="padding: 0px 12px;width: 63px;">
+              <a href="" class="dd">Vieux all</a>
+            </div>
+          </div>
+          <div style="display: block;" *ngFor="let event of lastAcceptedEvent">
+            <div class="ev">
+              <div class="im">
+                <img [src]="event.user.image" alt="Image de l'événement" class="ivim">
+              </div>
+              <div>
+                <h6 class="hh6">{{ event.user.username }}</h6>
+                <a href="" style="text-decoration: none;" [routerLink]="['/eventid', event.id]">
+                  <p class="pp">{{ event.nom }}</p>
+                </a>
+                <p class="pp"><i class="fa-regular fa-clock" style="animation: none;font-size: 12px; "></i>
+                  {{ event.timeAgo }}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="foot">
+            <a href="" style="font-size: 14px ;text-decoration: none;" class="dd"> Vieux more...</a>
+          </div>
+        </div>
+        <div *ngIf="userInfo" style="display: inline-block;">
+          <img [src]="userInfo.image" alt="User Image" class="img2">
+        </div>
+        <div class="b2" *ngIf="userInfo">
+          <button class="bb2" (click)="toggleDropdown()">
+
+            <p>{{ userInfo.username }}</p>
+            <span><i class="fas fa-angle-down icon2"></i></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-end" *ngIf="showDropdown">
+            <!-- Contenu de votre menu déroulant -->
+            <a href="" class="a1" [routerLink]="['/user',userInfo.id]">
+              <i class='bx bx-user'></i>
+              profile</a>
+              <a [routerLink]="['/updateuser',userInfo.id]" class="a1"><i class='bx bx-wrench'></i>my information</a>
+            <a [routerLink]="['/ibm',userInfo.id]" class="a1"><i class='bx bx-dumbbell'></i>my IBM</a>
+            <a [routerLink]="['/qrcode',userInfo.id]" class="a1"><i class='bx bx-qr'></i>my QRcode</a>
+
+          </div>
+        </div>
+        <button class="b">
+          <i class='bx bx-cog'></i>
+        </button>
+
+
+      
+    </div>
+  </div>
+
+</div>
+<div style="display: flex;">
+  <div style="position: relative;top: 70px;">
+    <app-baradus></app-baradus>
+  </div>
+  <div class="ss" *ngIf="classes">
+    <div class="ss1">
+      <h4 class="h4h">PROFILE</h4>
+      <div style="display: flex;">
+        <p class="pp4">Contacts <span style="margin-left: 8px;">/</span></p>
+        <p class="pp5">Profile</p>
+      </div>
+    </div>
+    <div class="ss2">
+      <div class="ss3">
+        <div class="car1">
+          <div class="im2">
+            <div class="imus">
+              <img [src]="classes.image" alt="User Image">
+            </div>
+            <div style="display: block;">
+              <div class="con1">
+                <p class="usnam">{{ classes.nomprof }}</p>
+                <div class="con2">
+                  <div class="con3" style="    margin-right: 33px;">
+                    <p class="usib">{{ classes.nbrseance }}</p>
+                    <p class="usib2">session per week </p>
+                  </div>
+                  <div class="con3">
+                    <p class="usib">
+                      {{ classes.prix }}</p>
+                    <p class="usib2">DTN </p>
+                  </div>
+                </div>
+                <div class="connn2">
+                  <h4 class="title">
+                    Personal Information
+                  </h4>
+                  <p>
+                    Welcome to our sports class! I am here to motivate you, guide you and help you give the best of
+                    yourself in each session. Ready to push your limits and reach new heights with me? Let's go
+                  </p>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th> Full Name :</th>
+                        <td>{{classes.nomprof }}</td>
+                      </tr>
+                      <tr>
+                        <th>Mobile :</th>
+                        <td>{{classes.proftel }}</td>
+                      </tr>
+                      <tr>
+                        <th>E-mail :</th>
+                        <td>{{classes.profmail }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="conn3">
+                  <h4> Classe Information</h4>
+                  <ul>
+                    <li>
+                      <div class="ic">
+                        <i  class='bx bx-right-arrow-circle'></i>
+                    </div>
+                    <h5>{{classes.name}}</h5>
+                    </li>
+                    
+                    <li>
+                      <div class="ic2">
+                        <i  class='bx bx-right-arrow-circle'></i>
+                    </div>
+                    <h5>{{classes.registrationTimedebut}}</h5>
+                    <h5 style="margin-top: 5px; font-size: 13px;color: rgba(85, 110, 230);">start time</h5>
+                    </li>
+                    
+                    <li>
+                      <div class="ic2">
+                        <i  class='bx bx-right-arrow-circle'></i>
+                    </div>
+                    <h5>{{classes.registrationTifin}}</h5>
+                    <h5 style="margin-top: 5px; font-size: 13px;color: rgba(85, 110, 230);">exit time</h5>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="par2">
+        <div style="display: flex;">
+          <div class="card">
+            <div class="card2">
+              <div>
+                <p>customer number</p>
+                <h4 > {{ userCount }}</h4>
+            </div>
+            <div class="icc">
+              <span><i class='bx bxs-user' style="right: 10px;"></i></span>
+          </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card2">
+              <div>
+                <p>price per month</p>
+                <h4 >{{ classes.prix }}</h4>
+            </div>
+            <div class="icc">
+              <span> DTN</span>
+          </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card2">
+              <div>
+                <p>session per week</p>
+                <h4 >{{ classes.nbrseance }}</h4>
+            </div>
+            <div class="icc">
+              <span> <i class="fa-solid fa-graduation-cap"></i></span>
+          </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="!buttonClicked" class="video">
+
+
+            <div class="video-container" *ngIf="buttonClicked">
+            
+              <video [src]="videoUrl" controls></video>
+            </div>
+        </div>
+        
+        <div *ngIf="buttonClicked">
+          <video controls autoplay (click)="closeVideo()">
+            <source [src]="videoUrl" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+          </video>
+        </div>
+        <div class="tabcautch" *ngIf="users">
+          <h4>users </h4>
+          <table>
+            <thead>
+              <tr>
+                <th>class name</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{classes.name}}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.telephone }}</td>
+        
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />

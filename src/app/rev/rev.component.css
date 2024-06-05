@@ -1,0 +1,230 @@
+.homepage{
+    background-image: url('../../assets/images/ptt_review.jpg');
+    height: 458px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; 
+}
+.homepage2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; /* Prend la hauteur de la div parent .homepage */
+    width: 100%; /* Prend la largeur de la div parent .homepage */
+    background-color: rgba(0, 0, 0, 0.5); /* Ajoute la transparence ici */
+    height: 458px;
+    width: 86%;
+    padding: 0px 110px 0px 100px;
+    top: 0; /* Ajoutez ceci pour aligner sur le haut de la div parent */
+    left: 0; /* Ajoutez ceci pour aligner sur la gauche de la div parent */
+}
+.homepage3{
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* Assurez-vous que la position est relative pour que les z-index fonctionnent */
+    z-index: 1; /* Réglez le z-index selon vos besoins */
+    top: 183px;
+}
+.homepage3 h1{
+    color: #FFFFFF;
+    font-size: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-style: italic;
+
+    font-family: "Epilogue", sans-serif;
+}
+.homepage3 p {
+    color: #EDEDED;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 25px;
+    width: 507px;
+    font-family: "Epilogue", sans-serif;
+}
+.homemain{
+    margin: 20px 0px 20px 0px;
+    text-align: right;
+    height: 50px;
+    width: 634px;
+    position: relative; /* Assurez-vous que la position est relative pour que les z-index fonctionnent */
+    z-index: 2; /* Réglez le z-index selon vos besoins */
+}
+.homemain2{
+    margin: 0;
+    list-style: none;
+    color: #c8c8c8;
+    display: inline-block;
+    padding: 13px 30px 12px;
+    background-color: rgba(255, 255, 255, 0.15);
+ 
+}
+.homemain2 a {
+    text-decoration: none;
+    color: #c8c8c8;
+    font-family: "Epilogue", sans-serif;
+    transition: all 300ms ease 0ms;
+}
+.homemain2 a:hover {
+    border-bottom: 1px solid #FFFFFF;
+}
+.homemain2 span{
+    color: #ffffff;
+}
+.body1{
+margin-top: 120px;
+display: flex;
+justify-content: center;
+}
+.body2{
+    background-image: url('../../assets/images/BG_review.jpg');
+    width:1190px;
+    height: 402px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.body3{
+    margin-top: 60px;
+}
+.body4{
+    text-align: center;
+}
+.body4 img{
+
+    transition: transform 0.5s ease;
+}
+
+  
+.body4 img:hover {
+    animation: moveUpAndDown 1s ease;
+  }
+  
+  @keyframes moveUpAndDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  .body4 h2{
+    font-family: "Epilogue", sans-serif;
+    color: #FFFFFF;
+    font-size: 35px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.25;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+    margin-top: 25px;
+  }
+  .body4 p{
+    color: #EDEDED;
+    margin: 10px 0px 0px 0px;
+    padding: 0% 27% 0% 27%;
+    font-size: 15px;
+}
+.b3 {
+    margin-right: 7px;
+    height: auto;
+    background-color: #ffc107;
+    color: #060606;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0 35px;
+    line-height: 50px;
+    transition: all 300ms ease 0ms;
+    border-radius: 0;
+    position: relative;
+    z-index: 1;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Epilogue", sans-serif;
+  }
+  
+  .b3::before {
+    content: '';
+    position: absolute;
+    width: 207px;
+    height: 100%;
+    background-color: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  
+  .b3::after {
+    content: '';
+    position: absolute;
+    width: 341px;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid #ffc107;
+    top: 0;
+    left: 0;
+    transform: translate(7px, 7px);
+    z-index: -2;
+    transition: all 230ms ease 0ms;
+  }
+  
+  .b3:hover:after {
+    transform: translate(4px, 4px);
+  }
+  .body11{
+
+    display: block;
+  }
+  .body22{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    
+    
+  }
+  h4{
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 5px;
+    letter-spacing: 0.1em;
+    color: #060606;
+    font-family: "Epilogue", sans-serif;
+    margin: 0;
+  }
+  /* Styles pour les étoiles */
+.star-rating {
+  color: #ffd700; /* Couleur par défaut des étoiles */
+}
+
+.star {
+  font-size: 15px; 
+  text-align: left;
+}
+
+/* Style des étoiles remplies */
+.star.filled {
+  color: #ffd700; /* Couleur des étoiles remplies */
+}
+
+/* Style des étoiles vides */
+.star.empty {
+  color: #cccccc; /* Couleur des étoiles vides */
+}
+.body22 p {
+  font-size: 15px;
+  margin-top: 15px;
+  width: 1111px;
+  color: #666666;
+}

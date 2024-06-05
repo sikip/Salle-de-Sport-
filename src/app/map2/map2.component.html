@@ -1,0 +1,30 @@
+<div class="map2">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3195.144599666855!2d10.1191389!3d36.7910833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzbCsDQ3JzI3LjkiTiAxMMKwMDcnMDguOSJF!5e0!3m2!1sfr!2stn!4v1708211125227!5m2!1sfr!2stn" width="1499" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div *ngFor="let salle of displayedSalle" style="padding: 0;margin: 0;" class="ii" 
+    class="ii aos-init" data-aos="slide-right" data-aos-duration="800" data-aos-easing="ease-in-out" data-aos-delay="100">
+      <div class="ii2">
+        <p style="margin-bottom: 20px;"> Our Locations</p>
+        <h3>{{salle.localaisation}}</h3>
+        <p class="p2" style=" margin-bottom: 17px;">
+            {{salle.locationexact}}
+         </p>
+         <p class="p2" >
+            Email:&nbsp;&nbsp;{{salle.email}}
+         </p>
+         <p class="p2" >
+            Phone:&nbsp;&nbsp;<span>{{salle.numero}} </span>
+         </p>
+         <p class="p2" >
+           {{salle.time}} 
+         </p>
+         <div class="pagination">
+            <div
+              class="pagination-bullet"
+              *ngFor="let pageIndex of totalPages(); let index = index"
+              [class.active]="index === (currentIndex / itemsPerSlide)"
+              (click)="goToSlide(index)"
+            ></div>
+         </div>
+      </div>
+    </div>
+</div>

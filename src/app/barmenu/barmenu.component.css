@@ -1,0 +1,118 @@
+.b1{
+    height: 39px;
+    background-color: black;
+    padding-top:18px;
+    padding-left: 55px;
+    padding-bottom: 18px;
+    
+}
+.b2{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(105, 105, 105, 0.425);
+    padding: 10px;
+}
+.b2 span{
+    color: aliceblue;
+    font-size: 21px;
+   
+}
+.b3{
+    display: flex;
+}
+.b4{
+    display: flex;
+    margin-right: 50px;
+}
+p {
+    color: aliceblue;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    font-family:  'Fivo Sans', sans-serif;
+    margin-left: 10px;
+    margin-top: 10px;
+   
+}
+a{
+    color: aliceblue;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    font-family: 'Fivo Sans', sans-serif;
+    margin-left: 10px;
+  text-decoration: none;
+  margin: 0;
+}
+.s:hover{
+    color: #fcb900;
+}
+.b6{
+    background-image: url('../../assets/images/h3_slider_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 655px;
+   
+}
+.b8{
+    height: auto;
+    display: flex;
+}
+
+.hl{
+    text-align: center;
+    font-size: 23px;
+    margin-top: 140px;
+  color: aliceblue;
+ 
+  padding-bottom: 40px;
+  letter-spacing: 5px;
+}
+.h2{
+    text-align: center; 
+    font-size: 74px;
+    font-weight: 500;
+    font-family: epilog,sans-serif;;
+    margin-bottom: 252px;
+}
+.h3{
+    font-size: 240px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-style: italic;
+    color: transparent;
+    line-height: 1;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
+    opacity: 0.3;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: absolute;
+    bottom: 210px;
+    left: 205px;
+    width: 100%;
+}
+img{
+    position: absolute;
+    top: 468px ;
+    right: 175px;
+    width: 1150px;
+    height: 518px;
+}
+.logo{
+    width: 190px;
+    height: 40px;
+    margin-right: 120px;
+}
+.img1{
+    width: 190px;
+    height: 40px; 
+
+    position: absolute;
+    top: 102px;
+    left: 70px; 
+}

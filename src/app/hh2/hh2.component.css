@@ -1,0 +1,9 @@
+.h1{
+    background-image: url(../../assets/images/h3_big_overlay.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+  
+    background-color: black;
+}
